@@ -8,11 +8,15 @@
 
 #import "DPAppDelegate.h"
 
+#import "DPMainController.h"
+
 @implementation DPAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = [[DPMainController alloc] init];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 							

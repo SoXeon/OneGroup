@@ -1,4 +1,4 @@
-//
+ //
 //  DPMainController.m
 //  一团
 //
@@ -51,22 +51,18 @@
 - (void)addAllChildControllers
 {
     DPDealListController *deal = [[DPDealListController alloc]init];
-    deal.view.backgroundColor = [UIColor yellowColor];
     DPNavigationController *nav = [[DPNavigationController alloc]initWithRootViewController:deal];
     [self addChildViewController:nav];
     
     DPMapViewController *map = [[DPMapViewController alloc]init];
-    map.view.backgroundColor = [UIColor orangeColor];
     nav = [[DPNavigationController alloc]initWithRootViewController:map];
     [self addChildViewController:nav];
     
     DPCollectViewController *collect = [[DPCollectViewController alloc]init];
-    collect.view.backgroundColor = [UIColor grayColor];
     nav = [[DPNavigationController alloc]initWithRootViewController:collect];
     [self addChildViewController:nav];
     
     DPMineViewController *mine = [[DPMineViewController alloc]init];
-    mine.view.backgroundColor = [UIColor redColor];
     nav = [[DPNavigationController alloc]initWithRootViewController:mine];
     [self addChildViewController:nav];
     

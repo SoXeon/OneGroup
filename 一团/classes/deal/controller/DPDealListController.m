@@ -7,6 +7,7 @@
 //
 
 #import "DPDealListController.h"
+#import "DPDealTopMenu.h"
 
 @interface DPDealListController ()
 
@@ -14,14 +15,36 @@
 
 @implementation DPDealListController
 
-
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    self.title = @"团购";
+    //监听城市改变的通知
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(cityChange) name:kCityChangeNote object:nil];
+    
+    //设置背景颜色
+    self.view.backgroundColor = kGlobalBg;
+    
+    //右边搜索框
+    UISearchBar *s = [[UISearchBar alloc]init];
+    s.frame = CGRectMake(0, 0, 210, 35);
+    s.placeholder = @"请输入商品名、地址等";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:s];
+    
+    //左边的菜单栏
+    DPDealTopMenu *top = [[DPDealTopMenu alloc] init];
+    top.contentView = self.view;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:top];
 }
 
+-(void)cityChange
+{
+    MyLog(@"城市发生改变");
+}
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 @end

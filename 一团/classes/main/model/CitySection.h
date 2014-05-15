@@ -9,5 +9,5 @@
 #import "DPBaseModel.h"
 
 @interface CitySection : DPBaseModel
-@property (nonatomic,strong) NSArray *cities;//所有的城市 
+@property (nonatomic,strong) NSMutableArray *cities;//所有的城市
 @end

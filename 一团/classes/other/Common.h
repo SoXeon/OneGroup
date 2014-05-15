@@ -6,6 +6,14 @@
 #define kDockItemW 100
 #define kDockItemH 80
 
+//顶部菜单Item的尺寸
+#define kTopMenuItemW 130
+#define kTopMenuItemH 44
+
+//底部菜单Item的尺寸
+#define kBottomMenuItemW 130
+#define kBottomMenuItemH 70
+
 //日志输出宏定义
 #ifdef DEBUG
 //调试状态
@@ -20,3 +28,6 @@
 #define kCityChangeNote @"city_change"
 //城市的key
 #define kCityKey @"city"
+
+//全局背景色
+#define kGlobalBg [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_deal.png"]]

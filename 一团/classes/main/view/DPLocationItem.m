@@ -8,6 +8,8 @@
 
 #import "DPLocationItem.h"
 #import "DPCityListController.h"
+#import "DPCity.h"
+#import "DPMetaDataTool.h"
 
 #define kImageScale 0.5
 
@@ -42,8 +44,25 @@
         
         //监听点击
         [self addTarget:self action:@selector(locationClick) forControlEvents:UIControlEventTouchDown];
+        
+        //监听城市改变的通知
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(cityChange) name:kCityChangeNote object:nil];
     }
     return self;
+}
+
+-(void)cityChange
+{
+    DPCity *city = [DPMetaDataTool sharedDPMetaDataTool].currentCity;
+    
+    //更改显示的城市的名称
+    [self setTitle:city.name forState:UIControlStateNormal];
+    
+    //关闭popover(代码关闭popover不会触发代理方法）
+    [_popover dismissPopoverAnimated:YES];
+    
+    //变成enable
+    self.enabled = YES;
 }
 
 - (void)screenRoate
@@ -51,29 +70,36 @@
     if (_popover.popoverVisible) {
         //关闭之前的
         [_popover dismissPopoverAnimated:NO];
-        
         //创建新的
-        [self performSelector:@selector(locationClick) withObject:nil afterDelay:0.5];
+        [self performSelector:@selector(showPopover) withObject:nil afterDelay:0.5];
     }
 }
 
+#pragma mark 显示popover
+- (void)showPopover
+{
+    [_popover presentPopoverFromRect:self.bounds inView:self permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+}
+
+
 - (void)locationClick
 {
+    self.enabled = NO;
     DPCityListController *city = [[DPCityListController alloc]init];
     _popover = [[UIPopoverController alloc] initWithContentViewController:city];
     _popover.popoverContentSize = CGSizeMake(320, 480);
     _popover.delegate = self;
-    [_popover presentPopoverFromRect:self.bounds inView:self permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-    
+    [self showPopover];
     //监听屏幕旋转的通知
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(screenRoate) name:UIDeviceOrientationDidChangeNotification object:nil];
 }
 
 - (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
 {
+    self.enabled = YES;
     //popover被销毁的时候，移除通知
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
 }
 
 - (void)dealloc

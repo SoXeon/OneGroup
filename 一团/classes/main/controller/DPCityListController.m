@@ -10,14 +10,18 @@
 #import "CitySection.h"
 #import "NSObject+Value.h"
 #import "DPCity.h"
+#import "DPMetaDataTool.h"
+#import "DPSearchResultController.h"
 
 #define kSearchH 44
 
-@interface DPCityListController () <UITableViewDataSource,UISearchBarDelegate>
+@interface DPCityListController () <UITableViewDataSource,UISearchBarDelegate,UITableViewDelegate>
 {
-    NSArray *_citiesData;//所有城市信息
+    NSMutableArray *_citiesSections;//所有城市信息
     UIView *_cover;//遮盖黑色蒙板
     UITableView *_tableView;
+    
+    DPSearchResultController *_searchResult;
     UISearchBar *_searchBar;
 }
 
@@ -58,6 +62,7 @@
     CGFloat h = self.view.frame.size.height - kSearchH;
     tableView.frame = CGRectMake(0, kSearchH, self.view.frame.size.width, h);
     tableView.dataSource = self;
+    tableView.delegate = self;
     tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:tableView];
     _tableView = tableView;
@@ -66,14 +71,13 @@
 #pragma mark 加载城市信息
 - (void)loadCitiesData
 {
-    _citiesData = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"Cities.plist" ofType:nil]];
     
-    NSDictionary *dict = _citiesData[0];
-    //name cities
-    CitySection *section = [[CitySection alloc]init];
+    _citiesSections = [NSMutableArray array];
+
+    NSArray *sections = [DPMetaDataTool sharedDPMetaDataTool].totalCitySections;
     
-    [section setValues:dict];
-    
+    [_citiesSections addObjectsFromArray:sections];
+
 }
 
 
@@ -81,7 +85,20 @@
 #pragma mark 监听搜索框内文字的改变
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-    
+    if (searchText.length == 0) {
+        //隐藏搜索界面
+        [_searchResult.view removeFromSuperview];
+    } else {
+        if (_searchResult == nil) {
+            _searchResult = [[DPSearchResultController alloc]init];
+            _searchResult.view.frame = _cover.frame;
+            _searchResult.view.backgroundColor = [UIColor whiteColor];
+            _searchResult.view.autoresizingMask = _cover.autoresizingMask;
+            [self addChildViewController:_searchResult];
+            }
+        _searchResult.searchText = searchText;
+        [self.view addSubview:_searchResult.view];
+    }
 }
 
 #pragma mark 搜索框开始编辑
@@ -94,7 +111,6 @@
     if (_cover == nil) {
         _cover = [[UIView alloc] init];
         _cover.backgroundColor = [UIColor blackColor];
-        _cover.alpha = 0.7;
         _cover.frame = _tableView.frame;
         _cover.autoresizingMask = _tableView.autoresizingMask;
         [_cover addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(coverClick)]];
@@ -136,14 +152,13 @@
 #pragma mark 数据源方法
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return _citiesData.count;
+    return _citiesSections.count;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSDictionary *sectionData = _citiesData[section];
-    NSArray *citites = sectionData[@"cities"];
-    return citites.count;
+    CitySection *s = _citiesSections[section];
+    return s.cities.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -153,23 +168,31 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    
-    NSDictionary *sectionData = _citiesData[indexPath.section];
-    NSArray *cities = sectionData[@"cities"];
-    cell.textLabel.text = cities[indexPath.row][@"name"];
+    CitySection *s = _citiesSections[indexPath.section];
+    DPCity *city = s.cities[indexPath.row];
+    cell.textLabel.text = city.name;
     
     return cell;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    NSDictionary *sectionData = _citiesData[section];
-    return sectionData[@"name"];
+    CitySection *s = _citiesSections[section];
+    return s.name;
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
-    //取出_citiesData中都所有字典name的值，并放到数组中返回
-    return [_citiesData valueForKeyPath:@"name"];
+    return [_citiesSections valueForKeyPath:@"name"];
+}
+
+#pragma mark - tableView的代理方法
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CitySection *s = _citiesSections[indexPath.section];
+    DPCity *city = s.cities[indexPath.row];
+    
+    [DPMetaDataTool sharedDPMetaDataTool].currentCity = city;
+    
 }
 @end

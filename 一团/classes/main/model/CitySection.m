@@ -10,10 +10,16 @@
 #import "DPCity.h"
 #import "NSObject+Value.h"
 @implementation CitySection
--(void)setCities:(NSArray *)cities
+-(void)setCities:(NSMutableArray *)cities
 {
     NSMutableArray *array = [NSMutableArray array];
     for (NSDictionary *dict in cities) {
+        
+        if ([dict isKindOfClass:[DPCity class]]) {
+            _cities = cities;
+            return;
+        }
+        
         DPCity *city = [[DPCity alloc]init];
         
         [city setValues:dict];

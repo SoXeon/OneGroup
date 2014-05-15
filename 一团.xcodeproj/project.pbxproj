@@ -34,6 +34,14 @@
 		6431653B1920F04D00DB035A /* DPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6431653A1920F04D00DB035A /* DPNavigationController.m */; };
 		6431654A1920FDFB00DB035A /* DPMoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 643165491920FDFB00DB035A /* DPMoreController.m */; };
 		6431654D19210BB300DB035A /* DPCityListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6431654C19210BB300DB035A /* DPCityListController.m */; };
+		E26C06F11923145B00E7963C /* DPMetaDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E26C06F01923145B00E7963C /* DPMetaDataTool.m */; };
+		E2AB1AE41923451C00B54EC8 /* DPSearchResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2AB1AE31923451C00B54EC8 /* DPSearchResultController.m */; };
+		E2AB1AF5192348B300B54EC8 /* ChineseToPinyinResource.m in Sources */ = {isa = PBXBuildFile; fileRef = E2AB1AE9192348B300B54EC8 /* ChineseToPinyinResource.m */; };
+		E2AB1AF6192348B300B54EC8 /* HanyuPinyinOutputFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = E2AB1AEB192348B300B54EC8 /* HanyuPinyinOutputFormat.m */; };
+		E2AB1AF7192348B300B54EC8 /* NSString+PinYin4Cocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = E2AB1AED192348B300B54EC8 /* NSString+PinYin4Cocoa.m */; };
+		E2AB1AF8192348B300B54EC8 /* PinyinFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = E2AB1AF0192348B300B54EC8 /* PinyinFormatter.m */; };
+		E2AB1AF9192348B300B54EC8 /* PinyinHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E2AB1AF2192348B300B54EC8 /* PinyinHelper.m */; };
+		E2AB1AFA192348B300B54EC8 /* unicode_to_hanyu_pinyin.txt in Resources */ = {isa = PBXBuildFile; fileRef = E2AB1AF4192348B300B54EC8 /* unicode_to_hanyu_pinyin.txt */; };
 		E2C834C2192218A00009F06E /* Categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2C834C0192218A00009F06E /* Categories.plist */; };
 		E2C834C3192218A00009F06E /* Cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2C834C1192218A00009F06E /* Cities.plist */; };
 		E2C834FC192218C70009F06E /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = E2C834C6192218C70009F06E /* Default-Landscape@2x~ipad.png */; };
@@ -154,6 +162,23 @@
 		643165491920FDFB00DB035A /* DPMoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPMoreController.m; sourceTree = "<group>"; };
 		6431654B19210BB300DB035A /* DPCityListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPCityListController.h; sourceTree = "<group>"; };
 		6431654C19210BB300DB035A /* DPCityListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPCityListController.m; sourceTree = "<group>"; };
+		E26C06EF1923145B00E7963C /* DPMetaDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPMetaDataTool.h; sourceTree = "<group>"; };
+		E26C06F01923145B00E7963C /* DPMetaDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPMetaDataTool.m; sourceTree = "<group>"; };
+		E26C06F2192315B100E7963C /* Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Singleton.h; path = "一团/classes/other/Singleton.h"; sourceTree = SOURCE_ROOT; };
+		E2AB1AE21923451C00B54EC8 /* DPSearchResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPSearchResultController.h; sourceTree = "<group>"; };
+		E2AB1AE31923451C00B54EC8 /* DPSearchResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPSearchResultController.m; sourceTree = "<group>"; };
+		E2AB1AE8192348B300B54EC8 /* ChineseToPinyinResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChineseToPinyinResource.h; sourceTree = "<group>"; };
+		E2AB1AE9192348B300B54EC8 /* ChineseToPinyinResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChineseToPinyinResource.m; sourceTree = "<group>"; };
+		E2AB1AEA192348B300B54EC8 /* HanyuPinyinOutputFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HanyuPinyinOutputFormat.h; sourceTree = "<group>"; };
+		E2AB1AEB192348B300B54EC8 /* HanyuPinyinOutputFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HanyuPinyinOutputFormat.m; sourceTree = "<group>"; };
+		E2AB1AEC192348B300B54EC8 /* NSString+PinYin4Cocoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PinYin4Cocoa.h"; sourceTree = "<group>"; };
+		E2AB1AED192348B300B54EC8 /* NSString+PinYin4Cocoa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PinYin4Cocoa.m"; sourceTree = "<group>"; };
+		E2AB1AEE192348B300B54EC8 /* PinYin4Objc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinYin4Objc.h; sourceTree = "<group>"; };
+		E2AB1AEF192348B300B54EC8 /* PinyinFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinyinFormatter.h; sourceTree = "<group>"; };
+		E2AB1AF0192348B300B54EC8 /* PinyinFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinyinFormatter.m; sourceTree = "<group>"; };
+		E2AB1AF1192348B300B54EC8 /* PinyinHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinyinHelper.h; sourceTree = "<group>"; };
+		E2AB1AF2192348B300B54EC8 /* PinyinHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinyinHelper.m; sourceTree = "<group>"; };
+		E2AB1AF4192348B300B54EC8 /* unicode_to_hanyu_pinyin.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = unicode_to_hanyu_pinyin.txt; sourceTree = "<group>"; };
 		E2C834C0192218A00009F06E /* Categories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Categories.plist; sourceTree = "<group>"; };
 		E2C834C1192218A00009F06E /* Cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Cities.plist; sourceTree = "<group>"; };
 		E2C834C6192218C70009F06E /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
@@ -349,6 +374,7 @@
 		64316508191FC94200DB035A /* main */ = {
 			isa = PBXGroup;
 			children = (
+				E26C06EE1923141B00E7963C /* tool */,
 				E2C83533192260EB0009F06E /* model */,
 				64316509191FC94200DB035A /* controller */,
 				6431650A191FC94200DB035A /* view */,
@@ -363,6 +389,8 @@
 				64316512191FC9CE00DB035A /* DPMainController.m */,
 				6431654B19210BB300DB035A /* DPCityListController.h */,
 				6431654C19210BB300DB035A /* DPCityListController.m */,
+				E2AB1AE21923451C00B54EC8 /* DPSearchResultController.h */,
+				E2AB1AE31923451C00B54EC8 /* DPSearchResultController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -387,8 +415,10 @@
 		6431650B191FC94200DB035A /* other */ = {
 			isa = PBXGroup;
 			children = (
+				E2AB1AE5192348B300B54EC8 /* Lib */,
 				E2C83540192273E90009F06E /* Categary */,
 				643165381920F01700DB035A /* controller */,
+				E26C06F2192315B100E7963C /* Singleton.h */,
 				6431650C191FC94200DB035A /* DPAppDelegate.h */,
 				6431650D191FC94200DB035A /* DPAppDelegate.m */,
 				6431650E191FC94200DB035A /* main.m */,
@@ -489,6 +519,58 @@
 				643165491920FDFB00DB035A /* DPMoreController.m */,
 			);
 			path = controller;
+			sourceTree = "<group>";
+		};
+		E26C06EE1923141B00E7963C /* tool */ = {
+			isa = PBXGroup;
+			children = (
+				E26C06EF1923145B00E7963C /* DPMetaDataTool.h */,
+				E26C06F01923145B00E7963C /* DPMetaDataTool.m */,
+			);
+			path = tool;
+			sourceTree = "<group>";
+		};
+		E2AB1AE5192348B300B54EC8 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				E2AB1AE6192348B300B54EC8 /* PinYin4Objc */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		E2AB1AE6192348B300B54EC8 /* PinYin4Objc */ = {
+			isa = PBXGroup;
+			children = (
+				E2AB1AE7192348B300B54EC8 /* Classes */,
+				E2AB1AF3192348B300B54EC8 /* Resources */,
+			);
+			path = PinYin4Objc;
+			sourceTree = "<group>";
+		};
+		E2AB1AE7192348B300B54EC8 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E2AB1AE8192348B300B54EC8 /* ChineseToPinyinResource.h */,
+				E2AB1AE9192348B300B54EC8 /* ChineseToPinyinResource.m */,
+				E2AB1AEA192348B300B54EC8 /* HanyuPinyinOutputFormat.h */,
+				E2AB1AEB192348B300B54EC8 /* HanyuPinyinOutputFormat.m */,
+				E2AB1AEC192348B300B54EC8 /* NSString+PinYin4Cocoa.h */,
+				E2AB1AED192348B300B54EC8 /* NSString+PinYin4Cocoa.m */,
+				E2AB1AEE192348B300B54EC8 /* PinYin4Objc.h */,
+				E2AB1AEF192348B300B54EC8 /* PinyinFormatter.h */,
+				E2AB1AF0192348B300B54EC8 /* PinyinFormatter.m */,
+				E2AB1AF1192348B300B54EC8 /* PinyinHelper.h */,
+				E2AB1AF2192348B300B54EC8 /* PinyinHelper.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		E2AB1AF3192348B300B54EC8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E2AB1AF4192348B300B54EC8 /* unicode_to_hanyu_pinyin.txt */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		E2C834BF192218A00009F06E /* Data */ = {
@@ -727,6 +809,7 @@
 				E2C83507192218C70009F06E /* bg_tabbar@2x.png in Resources */,
 				E2C83512192218C70009F06E /* ic_district.png in Resources */,
 				6431646E191FC15400DB035A /* InfoPlist.strings in Resources */,
+				E2AB1AFA192348B300B54EC8 /* unicode_to_hanyu_pinyin.txt in Resources */,
 				E2C83513192218C70009F06E /* ic_district@2x.png in Resources */,
 				E2C8350F192218C70009F06E /* ic_deal@2x.png in Resources */,
 				E2C834FE192218C70009F06E /* Default-Portrait@2x~ipad.png in Resources */,
@@ -764,16 +847,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2AB1AF9192348B300B54EC8 /* PinyinHelper.m in Sources */,
+				E2AB1AF8192348B300B54EC8 /* PinyinFormatter.m in Sources */,
 				E2C8353C192262450009F06E /* DPCity.m in Sources */,
 				E2C83539192261CD0009F06E /* DPBaseModel.m in Sources */,
 				E2C83536192261020009F06E /* CitySection.m in Sources */,
 				6431654D19210BB300DB035A /* DPCityListController.m in Sources */,
+				E26C06F11923145B00E7963C /* DPMetaDataTool.m in Sources */,
+				E2AB1AF5192348B300B54EC8 /* ChineseToPinyinResource.m in Sources */,
 				6431650F191FC94200DB035A /* DPAppDelegate.m in Sources */,
 				6431652E19208CF100DB035A /* DPDealListController.m in Sources */,
 				E2C83545192273E90009F06E /* UIBarButtonItem+DP.m in Sources */,
 				64316516191FCB7700DB035A /* DPDock.m in Sources */,
 				64316510191FC94200DB035A /* main.m in Sources */,
 				E2C83546192273E90009F06E /* UIImage+DP.m in Sources */,
+				E2AB1AF6192348B300B54EC8 /* HanyuPinyinOutputFormat.m in Sources */,
 				64316513191FC9CE00DB035A /* DPMainController.m in Sources */,
 				6431651D191FDD2000DB035A /* DPMoreItem.m in Sources */,
 				6431647A191FC15400DB035A /* DPViewController.m in Sources */,
@@ -784,7 +872,9 @@
 				E2C835491922744C0009F06E /* NSObject+Value.m in Sources */,
 				6431653719208D3500DB035A /* DPCollectViewController.m in Sources */,
 				6431653419208D2300DB035A /* DPMineViewController.m in Sources */,
+				E2AB1AE41923451C00B54EC8 /* DPSearchResultController.m in Sources */,
 				64316519191FD9EF00DB035A /* DPDockItem.m in Sources */,
+				E2AB1AF7192348B300B54EC8 /* NSString+PinYin4Cocoa.m in Sources */,
 				6431654A1920FDFB00DB035A /* DPMoreController.m in Sources */,
 				643165201920697700DB035A /* DPLocationItem.m in Sources */,
 			);

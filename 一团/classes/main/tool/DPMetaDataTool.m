@@ -61,6 +61,16 @@ singleton_implementation(DPMetaDataTool)
     _totalOrders = temp;
 }
 
+- (DPOrder *)orderWithName:(NSString *)name
+{
+    for (DPOrder *order in _totalOrders) {
+        if ([name isEqualToString:order.name]) {
+            return order;
+        }
+    }
+    return nil;
+}
+
 #pragma mark 初始化城市数据
 - (void)loadCityData
 {
@@ -128,7 +138,7 @@ singleton_implementation(DPMetaDataTool)
 {
     _currentCity = currentCity;
     
-    //移除之间的城市名
+    //移除之前的城市名
     [_visitedCityNames removeObject:currentCity.name];
     
     //将新的城市名放到最前面
@@ -148,6 +158,30 @@ singleton_implementation(DPMetaDataTool)
         NSMutableArray * allSections = (NSMutableArray *)_totalCitySections;
         [allSections insertObject:_visitedSection atIndex:0];
     }
+}
+
+- (void)setCurrentCategory:(NSString *)currentCategory
+{
+    _currentCategory = currentCategory;
+    //发出通知
+    [[NSNotificationCenter defaultCenter] postNotificationName:kCategoryChangeNote object:nil];
+
+}
+
+- (void)setCurrentDistrict:(NSString *)currentDistrict
+{
+    _currentDistrict = currentDistrict;
+    //发出通知
+    [[NSNotificationCenter defaultCenter] postNotificationName:kDistrictChangeNote object:nil];
+
+}
+
+- (void)setCurrentOrder:(DPOrder *)currentOrder
+{
+    _currentOrder = currentOrder;
+    //发出通知
+    [[NSNotificationCenter defaultCenter] postNotificationName:kOrderChangeNote object:nil];
+ 
 }
 
 @end

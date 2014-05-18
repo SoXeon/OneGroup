@@ -7,15 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DPSubtitlesView.h"
 
-@interface DPDealBottomMenu : UIView
+@class DPDealBottomMenuItem;
+@protocol DPSubtitlesViewDelegate;
+
+@interface DPDealBottomMenu : UIView <DPSubtitlesViewDelegate>
 {
     UIScrollView *_scrollView;
+    DPSubtitlesView *_subtitlesView;
 }
 @property (nonatomic, copy) void (^hideBlock)();
+
+//- (void)settingSubtitlesViews;
 
 // 通过动画显示出来
 - (void)show;
 // 通过动画隐藏
 - (void)hide;
+- (void)itemClickit:(DPDealBottomMenuItem *)item;
 @end

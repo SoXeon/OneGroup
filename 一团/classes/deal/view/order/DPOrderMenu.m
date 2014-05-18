@@ -9,7 +9,6 @@
 #import "DPOrderMenu.h"
 #import "DPMetaDataTool.h"
 #import "DPOrderMenuItem.h"
-#import "DPOrder.h"
 
 @implementation DPOrderMenu
 
@@ -33,4 +32,5 @@
     }
     return self;
 }
+
 @end

@@ -9,15 +9,18 @@
 #import "DPDealBottomMenu.h"
 #import "DPSubtitlesView.h"
 #import "DPDealBottomMenuItem.h"
+#import "DPMetaDataTool.h"
 
-#define kDuration 1.0
+#import "DPCategoryMenuItem.h"
+#import "DPDistrictMenuItem.h"
+#import "DPOrderMenuItem.h"
+
 #define kCoverAlpha 0.4
 
 @interface DPDealBottomMenu()
 {
     UIView *_cover;
     
-    DPSubtitlesView *_subtitlesView;
     DPDealBottomMenuItem *_selectedItem;
     
     UIView *_contentView;
@@ -69,28 +72,63 @@
     
     // 2.查看是否有子分类
     if (item.titles.count) { // 显示所有的子标题
-        if (_subtitlesView == nil) {
-            _subtitlesView = [[DPSubtitlesView alloc] init];
-        }
-        _subtitlesView.frame = CGRectMake(0, kBottomMenuItemH, self.frame.size.width, 0);
-        _subtitlesView.titles = item.titles;
-        
-        if (_subtitlesView.superview == nil) { // 没有父控件
-            [_subtitlesView show];
-        }
-        
-        [_contentView insertSubview:_subtitlesView belowSubview:_scrollView];
-        
-        CGRect f = _contentView.frame;
-        f.size.height = kBottomMenuItemH + _subtitlesView.frame.size.height;
-        _contentView.frame = f;
+        [self showSubitlesView:item.titles];
     } else { // 隐藏所有的子标题
-        [_subtitlesView removeFromSuperview];
-        
-        CGRect f = _contentView.frame;
-        f.size.height = kBottomMenuItemH;
-        _contentView.frame = f;
+        [self hideSubitlesView:item];
     }
+    
+}
+
+#pragma mark隐藏子标题
+- (void)hideSubitlesView:(DPDealBottomMenuItem *)item
+{
+    [_subtitlesView hide];
+    
+    //调整整个内容view的frame
+    CGRect f = _contentView.frame;
+    f.size.height = kBottomMenuItemH;
+    _contentView.frame = f;
+    
+    //设置当前数据
+    NSString *title = [item titleForState:UIControlStateNormal];
+    if ([item isKindOfClass:[DPCategoryMenuItem class]]) {
+        [DPMetaDataTool sharedDPMetaDataTool].currentCategory = title;
+    } else if ([item isKindOfClass:[DPDistrictMenuItem class]]) {
+        [DPMetaDataTool sharedDPMetaDataTool].currentDistrict = title;
+    } else {
+        [DPMetaDataTool sharedDPMetaDataTool].currentOrder = [[DPMetaDataTool sharedDPMetaDataTool] orderWithName:title];
+    }
+}
+
+#pragma mark 显示子标题
+- (void)showSubitlesView:(NSArray *)titles
+{
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDelay:kDefaultAnimDuration];
+    
+    if (_subtitlesView == nil) {
+        _subtitlesView = [[DPSubtitlesView alloc] init];
+        _subtitlesView.delegate = self;
+//        [self settingSubtitlesViews];
+    }
+    
+    //设置子标题的frame
+    _subtitlesView.frame = CGRectMake(0, kBottomMenuItemH, self.frame.size.width, _subtitlesView.frame.size.height);
+    //设置子标题显示内容
+    _subtitlesView.titles = titles;
+    
+    if (_subtitlesView.superview == nil) { // 没有父控件
+        [_subtitlesView show];
+    }
+    //添加子标题需要显示的内容scrollView底部
+    [_contentView insertSubview:_subtitlesView belowSubview:_scrollView];
+    
+    //调整整个内容view的frame
+    CGRect f = _contentView.frame;
+    f.size.height = kBottomMenuItemH + _subtitlesView.frame.size.height;
+    _contentView.frame = f;
+    
+    [UIView commitAnimations];
 }
 
 #pragma mark 显示
@@ -99,7 +137,7 @@
     _contentView.transform = CGAffineTransformMakeTranslation(0, -_contentView.frame.size.height);
     _contentView.alpha = 0;
     _cover.alpha = 0;
-    [UIView animateWithDuration:kDuration animations:^{
+    [UIView animateWithDuration:kDefaultAnimDuration animations:^{
         // 1.scrollView从上面 -> 下面
         _contentView.transform = CGAffineTransformIdentity;
         _contentView.alpha = 1;
@@ -113,7 +151,7 @@
     if (_hideBlock) {
         _hideBlock();
     }
-    [UIView animateWithDuration:kDuration animations:^{
+    [UIView animateWithDuration:kDefaultAnimDuration animations:^{
         // 1.scrollView从下面 -> 上面
         _contentView.transform = CGAffineTransformMakeTranslation(0, -_contentView.frame.size.height);
         
@@ -131,6 +169,5 @@
         _cover.alpha = kCoverAlpha;
     }];
 }
-
 
 @end

@@ -14,6 +14,8 @@
 #import "DPDealBottomMenu.h"
 #import "DPSubtitlesView.h"
 #import "DPDealBottomMenuItem.h"
+#import "DPMetaDataTool.h"
+#import "DPSubtitlesView.h"
 
 @implementation DPDistrictMenu
 
@@ -39,5 +41,25 @@
     }
     return self;
 }
+
+- (void)subtitlesView:(DPSubtitlesView *)subtitlesView titleClick:(NSString *)title
+{
+    [DPMetaDataTool sharedDPMetaDataTool].currentDistrict = title;
+}
+
+-(NSString *)subtitlesViewGetCurrentTitle:(DPSubtitlesView *)subtitlesView
+{
+    return [DPMetaDataTool sharedDPMetaDataTool].currentDistrict;
+}
+
+//-(void)settingSubtitlesViews
+//{
+//    _subtitlesView.setTitleBlock = ^(NSString *title){
+//        [DPMetaDataTool sharedDPMetaDataTool].currentDistrict = title;
+//    };
+//    _subtitlesView.getTitleBlock = ^{
+//        return [DPMetaDataTool sharedDPMetaDataTool].currentDistrict;
+//    };
+//}
 
 @end

@@ -11,6 +11,8 @@
 #import "DPCategoryMenu.h"
 #import "DPDistrictMenu.h"
 #import "DPOrderMenu.h"
+#import "DPMetaDataTool.h"
+#import "DPOrder.h"
 
 @interface DPDealTopMenu()
 {
@@ -23,6 +25,10 @@
     DPOrderMenu *_oMenu;//排序菜单
     
     DPDealBottomMenu *_showingMenu;//正在展示的的底部菜单
+    
+    DPDealTopMenuItem *_cItem;
+    DPDealTopMenuItem *_dItem;
+    DPDealTopMenuItem *_oItem;
 }
 
 @end
@@ -34,19 +40,55 @@
     self = [super initWithFrame:frame];
     if (self) {
         //1.全部分类
-        [self addMenuItem:@"全部分类" index:0];
+        _cItem = [self addMenuItem:@"全部分类" index:0];
         
         //2.全部分区
-        [self addMenuItem:@"全部分区" index:1];
+        _dItem = [self addMenuItem:@"全部分区" index:1];
         
         //3.默认排序
-        [self addMenuItem:@"默认排序" index:2];
+        _oItem = [self addMenuItem:@"默认排序" index:2];
+        
+        //监听通知
+        kAddAllNotes(dataChange)
     }
     return self;
 }
 
+- (void)dataChange
+{
+    _selectedItem.selected = NO;
+    _selectedItem = nil;
+    
+    //1.分类按钮
+    NSString *c = [DPMetaDataTool sharedDPMetaDataTool].currentCategory;
+    if (c) {
+        _cItem.title = c;
+    }
+    
+    //2.分区按钮
+    NSString *d = [DPMetaDataTool sharedDPMetaDataTool].currentDistrict;
+    if (d) {
+        _dItem.title = d;
+    }
+    
+    //3.排序按钮
+    NSString *o = [DPMetaDataTool sharedDPMetaDataTool].currentOrder.name;
+    if (o) {
+        _oItem.title = o;
+    }
+    
+    //隐藏底部菜单
+    [_showingMenu hide];
+    _showingMenu = nil;
+}
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 #pragma mark 添加item
-- (void)addMenuItem:(NSString *)title index:(int)index
+- (DPDealTopMenuItem *)addMenuItem:(NSString *)title index:(int)index
 {
     DPDealTopMenuItem * item = [[DPDealTopMenuItem alloc]init];
     item.title = title;
@@ -54,6 +96,7 @@
     item.frame = CGRectMake(kTopMenuItemW * index, 0, 0, 0);
     [item addTarget:self action:@selector(itemClick:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:item];
+    return item;
 }
 
 #pragma mark 监听顶部item的点击

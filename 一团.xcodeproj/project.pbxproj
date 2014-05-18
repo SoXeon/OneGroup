@@ -34,6 +34,9 @@
 		6431653B1920F04D00DB035A /* DPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6431653A1920F04D00DB035A /* DPNavigationController.m */; };
 		6431654A1920FDFB00DB035A /* DPMoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 643165491920FDFB00DB035A /* DPMoreController.m */; };
 		6431654D19210BB300DB035A /* DPCityListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6431654C19210BB300DB035A /* DPCityListController.m */; };
+		E235BB0E1928584D00A3F4F6 /* DPAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = E235BB0A1928584D00A3F4F6 /* DPAPI.m */; };
+		E235BB0F1928584D00A3F4F6 /* DPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E235BB0D1928584D00A3F4F6 /* DPRequest.m */; };
+		E235BB1219285DBE00A3F4F6 /* DPDeal.m in Sources */ = {isa = PBXBuildFile; fileRef = E235BB1119285DBE00A3F4F6 /* DPDeal.m */; };
 		E249798219244498005D964E /* bg_bottom_deal.png in Resources */ = {isa = PBXBuildFile; fileRef = E249790619244498005D964E /* bg_bottom_deal.png */; };
 		E249798319244498005D964E /* bg_bottom_deal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E249790719244498005D964E /* bg_bottom_deal@2x.png */; };
 		E249798419244498005D964E /* bg_deal.png in Resources */ = {isa = PBXBuildFile; fileRef = E249790819244498005D964E /* bg_deal.png */; };
@@ -238,6 +241,7 @@
 		E2C83545192273E90009F06E /* UIBarButtonItem+DP.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C83542192273E90009F06E /* UIBarButtonItem+DP.m */; };
 		E2C83546192273E90009F06E /* UIImage+DP.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C83544192273E90009F06E /* UIImage+DP.m */; };
 		E2C835491922744C0009F06E /* NSObject+Value.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C835481922744C0009F06E /* NSObject+Value.m */; };
+		E2E8380E1928849E001DC55D /* DealCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2E8380D1928849E001DC55D /* DealCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -297,6 +301,13 @@
 		643165491920FDFB00DB035A /* DPMoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPMoreController.m; sourceTree = "<group>"; };
 		6431654B19210BB300DB035A /* DPCityListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPCityListController.h; sourceTree = "<group>"; };
 		6431654C19210BB300DB035A /* DPCityListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPCityListController.m; sourceTree = "<group>"; };
+		E235BB091928584D00A3F4F6 /* DPAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPAPI.h; sourceTree = "<group>"; };
+		E235BB0A1928584D00A3F4F6 /* DPAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPAPI.m; sourceTree = "<group>"; };
+		E235BB0B1928584D00A3F4F6 /* DPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPConstants.h; sourceTree = "<group>"; };
+		E235BB0C1928584D00A3F4F6 /* DPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRequest.h; sourceTree = "<group>"; };
+		E235BB0D1928584D00A3F4F6 /* DPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRequest.m; sourceTree = "<group>"; };
+		E235BB1019285DBE00A3F4F6 /* DPDeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPDeal.h; sourceTree = "<group>"; };
+		E235BB1119285DBE00A3F4F6 /* DPDeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPDeal.m; sourceTree = "<group>"; };
 		E249790619244498005D964E /* bg_bottom_deal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_bottom_deal.png; sourceTree = "<group>"; };
 		E249790719244498005D964E /* bg_bottom_deal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_bottom_deal@2x.png"; sourceTree = "<group>"; };
 		E249790819244498005D964E /* bg_deal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_deal.png; sourceTree = "<group>"; };
@@ -533,6 +544,7 @@
 		E2C83544192273E90009F06E /* UIImage+DP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+DP.m"; sourceTree = "<group>"; };
 		E2C835471922744C0009F06E /* NSObject+Value.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Value.h"; sourceTree = "<group>"; };
 		E2C835481922744C0009F06E /* NSObject+Value.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Value.m"; sourceTree = "<group>"; };
+		E2E8380D1928849E001DC55D /* DealCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DealCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -699,6 +711,7 @@
 		6431650B191FC94200DB035A /* other */ = {
 			isa = PBXGroup;
 			children = (
+				E235BB081928584D00A3F4F6 /* API */,
 				E2AB1AE5192348B300B54EC8 /* Lib */,
 				E2C83540192273E90009F06E /* Categary */,
 				643165381920F01700DB035A /* controller */,
@@ -805,6 +818,18 @@
 				643165491920FDFB00DB035A /* DPMoreController.m */,
 			);
 			path = controller;
+			sourceTree = "<group>";
+		};
+		E235BB081928584D00A3F4F6 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E235BB091928584D00A3F4F6 /* DPAPI.h */,
+				E235BB0A1928584D00A3F4F6 /* DPAPI.m */,
+				E235BB0B1928584D00A3F4F6 /* DPConstants.h */,
+				E235BB0C1928584D00A3F4F6 /* DPRequest.h */,
+				E235BB0D1928584D00A3F4F6 /* DPRequest.m */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		E249790419244498005D964E /* Deal */ = {
@@ -983,6 +1008,7 @@
 				E2497A1C19248D4F005D964E /* DPDealBottomMenuItem.m */,
 				E2497A2C1924B1CE005D964E /* DPSubtitlesView.h */,
 				E2497A2D1924B1CE005D964E /* DPSubtitlesView.m */,
+				E2E8380D1928849E001DC55D /* DealCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -990,6 +1016,8 @@
 		E2497A0819245E9A005D964E /* model */ = {
 			isa = PBXGroup;
 			children = (
+				E235BB1019285DBE00A3F4F6 /* DPDeal.h */,
+				E235BB1119285DBE00A3F4F6 /* DPDeal.m */,
 				E2497A0919245EBC005D964E /* DPCategory.h */,
 				E2497A0A19245EBC005D964E /* DPCategory.m */,
 				E2497A2919249EBD005D964E /* DPOrder.h */,
@@ -1388,6 +1416,7 @@
 				E2C83521192218C70009F06E /* ic_more_hl.png in Resources */,
 				E24979D319244498005D964E /* ic_deal_collect_pressed@2x.png in Resources */,
 				E2C83511192218C70009F06E /* ic_deal_hl@2x.png in Resources */,
+				E2E8380E1928849E001DC55D /* DealCell.xib in Resources */,
 				E2C83502192218C70009F06E /* icon-76x76.png in Resources */,
 				E2C83529192218C70009F06E /* bg_navigation_back_hl@2x.png in Resources */,
 				E24979AB19244498005D964E /* ic_filter_category_default@2x.png in Resources */,
@@ -1504,6 +1533,8 @@
 				E2497A0119244922005D964E /* DPDealTopMenuItem.m in Sources */,
 				64316513191FC9CE00DB035A /* DPMainController.m in Sources */,
 				6431651D191FDD2000DB035A /* DPMoreItem.m in Sources */,
+				E235BB1219285DBE00A3F4F6 /* DPDeal.m in Sources */,
+				E235BB0E1928584D00A3F4F6 /* DPAPI.m in Sources */,
 				E2497A261924961D005D964E /* DPOrderMenuItem.m in Sources */,
 				6431647A191FC15400DB035A /* DPViewController.m in Sources */,
 				6431653119208D0B00DB035A /* DPMapViewController.m in Sources */,
@@ -1519,6 +1550,7 @@
 				E2AB1AE41923451C00B54EC8 /* DPSearchResultController.m in Sources */,
 				E2497A2B19249EBD005D964E /* DPOrder.m in Sources */,
 				64316519191FD9EF00DB035A /* DPDockItem.m in Sources */,
+				E235BB0F1928584D00A3F4F6 /* DPRequest.m in Sources */,
 				E2AB1AF7192348B300B54EC8 /* NSString+PinYin4Cocoa.m in Sources */,
 				6431654A1920FDFB00DB035A /* DPMoreController.m in Sources */,
 				643165201920697700DB035A /* DPLocationItem.m in Sources */,

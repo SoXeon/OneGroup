@@ -10,6 +10,7 @@
 #import "DPMetaDataTool.h"
 #import "DPCategoryMenuItem.h"
 #import "DPCategory.h"
+#import "DPMetaDataTool.h"
 
 #import "DPSubtitlesView.h"
 
@@ -39,6 +40,24 @@
     return self;
 }
 
+- (void)subtitlesView:(DPSubtitlesView *)subtitlesView titleClick:(NSString *)title
+{
+    [DPMetaDataTool sharedDPMetaDataTool].currentCategory = title;
+}
 
+-(NSString *)subtitlesViewGetCurrentTitle:(DPSubtitlesView *)subtitlesView
+{
+    return [DPMetaDataTool sharedDPMetaDataTool].currentCategory;
+}
+
+//-(void)settingSubtitlesViews
+//{
+//    _subtitlesView.setTitleBlock = ^(NSString *title){
+//        [DPMetaDataTool sharedDPMetaDataTool].currentCategory = title;
+//    };
+//    _subtitlesView.getTitleBlock = ^{
+//        return [DPMetaDataTool sharedDPMetaDataTool].currentCategory;
+//    };
+//}
 
 @end

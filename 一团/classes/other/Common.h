@@ -26,8 +26,23 @@
 //通知名称
 //城市改变的通知
 #define kCityChangeNote @"city_change"
+//区域改变的通知
+#define kDistrictChangeNote @"district_change"
+//分类改变的通知
+#define kCategoryChangeNote @"catregory_change"
+//排序改变的通知
+#define kOrderChangeNote @"order_change"
 //城市的key
 #define kCityKey @"city"
 
+#define kAddAllNotes(method) \
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(method) name:kCityChangeNote object:nil];\
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(method) name:kDistrictChangeNote object:nil];\
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(method) name:kOrderChangeNote object:nil];\
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(method) name:kCategoryChangeNote object:nil];
+
 //全局背景色
 #define kGlobalBg [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_deal.png"]]
+
+//设置默认动画时间
+#define kDefaultAnimDuration 0.3

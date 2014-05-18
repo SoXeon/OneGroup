@@ -111,10 +111,10 @@
     if (_cover == nil) {
         _cover = [[UIView alloc] init];
         _cover.backgroundColor = [UIColor blackColor];
-        _cover.frame = _tableView.frame;
         _cover.autoresizingMask = _tableView.autoresizingMask;
         [_cover addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(coverClick)]];
     }
+    _cover.frame = _tableView.frame;
     [self.view addSubview:_cover];
     _cover.alpha = 0.0;
     [UIView animateWithDuration:0.3 animations:^{

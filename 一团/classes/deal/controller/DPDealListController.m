@@ -12,7 +12,12 @@
 #import "DPMetaDataTool.h"
 #import "DPCity.h"
 #import "DPDeal.h"
+#import "DPDealCell.h"
 #import "NSObject+Value.h"
+
+#define kItemW 250
+#define kItemH 250
+
 
 @interface DPDealListController () <DPRequestDelegate>
 {
@@ -26,9 +31,8 @@
 - (id)init
 {
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
-    layout.itemSize = CGSizeMake(250, 250);
     layout.minimumLineSpacing = 30;
-    layout.sectionInset = UIEdgeInsetsMake(35, 35, 35, 35);
+    layout.itemSize = CGSizeMake(kItemW, kItemH);
     return [super initWithCollectionViewLayout:layout];
 }
 
@@ -40,7 +44,7 @@
     kAddAllNotes(dataChange)
     
     //设置背景颜色
-    self.view.backgroundColor = kGlobalBg;
+    self.collectionView.backgroundColor = kGlobalBg;
     
     //右边搜索框
     UISearchBar *s = [[UISearchBar alloc]init];
@@ -54,7 +58,16 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:top];
     
     //注册cell的xib
-    [self.collectionView registerNib:[UINib nibWithNibName:@"DealCell" bundle:nil] forCellWithReuseIdentifier:@"deal"];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"DPDealCell" bundle:nil] forCellWithReuseIdentifier:@"deal"];
+    
+    //设置collectionView永远支持垂直滚动
+    self.collectionView.alwaysBounceVertical = YES;
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    //默认计算layout
+    [self didRotateFromInterfaceOrientation:0];
 }
 
 -(void)dataChange
@@ -85,6 +98,32 @@
     [self.collectionView reloadData];
 }
 
+#pragma mark 屏幕旋转的时候调用
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    //取出layout
+    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
+    
+    //计算间距
+    CGFloat v = 20;
+    CGFloat h = 0;
+    
+    if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation)) {
+      h = (self.view.frame.size.width - 3 * kItemW) / 4;
+    } else {
+      h = (self.view.frame.size.width - 2 * kItemW) / 3;
+    }
+    [UIView animateWithDuration:1.0 animations:^{
+        layout.sectionInset = UIEdgeInsetsMake(v, h, v, h);
+    }];
+}
+
+
 -(void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -92,14 +131,16 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 20;
+    return _deals.count;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *ID = @"deal";
     
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
+    DPDealCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
+    
+    cell.deal = _deals[indexPath.row];
    
     return cell;
 }

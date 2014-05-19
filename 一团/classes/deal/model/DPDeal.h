@@ -14,8 +14,8 @@
 @property (nonatomic, assign) double list_price;
 @property (nonatomic, assign) double current_price; // 当前价格
 
-@property (nonatomic, readonly) NSString *list_price_text;
-@property (nonatomic, readonly) NSString *current_price_text; // 当前价格
+//@property (nonatomic, readonly) NSString *list_price_text;
+//@property (nonatomic, readonly) NSString *current_price_text; // 当前价格
 
 @property (nonatomic, strong) NSArray *regions; // 区域
 @property (nonatomic, strong) NSArray *categories; // 分类

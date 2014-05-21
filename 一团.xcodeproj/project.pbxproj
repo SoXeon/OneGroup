@@ -266,6 +266,7 @@
 		E2E838521928B3AA001DC55D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E838511928B3AA001DC55D /* MapKit.framework */; };
 		E2E838541928B3B7001DC55D /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E838531928B3B7001DC55D /* ImageIO.framework */; };
 		E2E838581928B415001DC55D /* DPImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E838571928B415001DC55D /* DPImageTool.m */; };
+		E2EB805D192B9A4100133BC2 /* DPDealTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EB805C192B9A4100133BC2 /* DPDealTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -616,6 +617,8 @@
 		E2E838531928B3B7001DC55D /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		E2E838561928B415001DC55D /* DPImageTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DPImageTool.h; path = ../../main/tool/DPImageTool.h; sourceTree = "<group>"; };
 		E2E838571928B415001DC55D /* DPImageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DPImageTool.m; path = ../../main/tool/DPImageTool.m; sourceTree = "<group>"; };
+		E2EB805B192B9A4100133BC2 /* DPDealTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPDealTool.h; sourceTree = "<group>"; };
+		E2EB805C192B9A4100133BC2 /* DPDealTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPDealTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -820,6 +823,7 @@
 		6431652619208B7200DB035A /* deal */ = {
 			isa = PBXGroup;
 			children = (
+				E2EB805A192B9A1300133BC2 /* tool */,
 				E2497A0819245E9A005D964E /* model */,
 				E24979FB192447EC005D964E /* view */,
 				6431652719208B7200DB035A /* controller */,
@@ -1376,6 +1380,15 @@
 			path = Tool;
 			sourceTree = "<group>";
 		};
+		E2EB805A192B9A1300133BC2 /* tool */ = {
+			isa = PBXGroup;
+			children = (
+				E2EB805B192B9A4100133BC2 /* DPDealTool.h */,
+				E2EB805C192B9A4100133BC2 /* DPDealTool.m */,
+			);
+			path = tool;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1705,6 +1718,7 @@
 				6431652319206F6A00DB035A /* DPTabItem.m in Sources */,
 				E2E838431928B359001DC55D /* SDImageCache.m in Sources */,
 				6431653B1920F04D00DB035A /* DPNavigationController.m in Sources */,
+				E2EB805D192B9A4100133BC2 /* DPDealTool.m in Sources */,
 				E2C835491922744C0009F06E /* NSObject+Value.m in Sources */,
 				6431653719208D3500DB035A /* DPCollectViewController.m in Sources */,
 				6431653419208D2300DB035A /* DPMineViewController.m in Sources */,

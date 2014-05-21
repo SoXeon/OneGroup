@@ -46,3 +46,9 @@
 
 //设置默认动画时间
 #define kDefaultAnimDuration 0.3
+
+
+//固定字符串
+#define kAllCategory @"全部分类"
+#define KAllDistrict @"全部商区"
+#define kAll @"全部"

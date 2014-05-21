@@ -48,17 +48,24 @@
 //        _setTitleBlock([btn titleForState:UIControlStateNormal]);
 //    }
     if ([_delegate respondsToSelector:@selector(subtitlesView:titleClick:)]) {
-        [_delegate subtitlesView:self titleClick:[btn titleForState:UIControlStateNormal]];
+        NSString *title = [btn titleForState:UIControlStateNormal];
+        
+        if ([title isEqualToString:kAll]) {
+            title = _mainTitle;
+        }
+        
+        [_delegate subtitlesView:self titleClick:title];
     }
-    
-    
 }
 
 - (void)setTitles:(NSArray *)titles
 {
-    _titles = titles;
+    NSMutableArray *array = [NSMutableArray array];
+    [array addObject:kAll];
+    [array addObjectsFromArray:titles];
+    _titles = array;
     
-    int count = titles.count;
+    int count = _titles.count;
     // 设置按钮的文字
     for (int i = 0; i<count; i++) {
         // 1.取出i位置对应的按钮
@@ -75,15 +82,22 @@
         
         // 2.设置按钮文字
         btn.hidden = NO;
-        [btn setTitle:titles[i] forState:UIControlStateNormal];
+        [btn setTitle:_titles[i] forState:UIControlStateNormal];
+        
         
         //3.根据按钮文字来设定是否被选中
         if ([_delegate respondsToSelector:@selector(subtitlesViewGetCurrentTitle:)]) {
             NSString *current =  [_delegate subtitlesViewGetCurrentTitle:self];
-            btn.selected = [titles[i] isEqualToString:current];
-            if (btn.selected) {
+            //选中了主标题,选中全部按钮
+            if ([current isEqualToString:_mainTitle] && i == 0 ) {
+                btn.selected = YES;
                 _selectedBtn = btn;
+            } else {
+                btn.selected = [_titles[i] isEqualToString:current];
+                if (btn.selected) {
+                    _selectedBtn = btn;
             }
+          }
         } else {
                 btn.selected = NO;
             }

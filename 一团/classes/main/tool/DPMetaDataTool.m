@@ -55,7 +55,7 @@ singleton_implementation(DPMetaDataTool)
     for (int i = 0; i<count; i++){
         DPOrder *o = [[DPOrder alloc] init];
         o.name = array[i];
-        o.index = i;
+        o.index = i + 1;
         [temp addObject:o];
     }
     _totalOrders = temp;
@@ -126,6 +126,13 @@ singleton_implementation(DPMetaDataTool)
     NSArray *array = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"Categories.plist" ofType:nil]];
     
     NSMutableArray *temp = [NSMutableArray array];
+    
+    //添加全部分类
+    DPCategory *all = [[DPCategory alloc]init];
+    all.name = kAllCategory;
+    all.icon = @"ic_filter_category_-1.png";
+    [temp  addObject:all];
+    
     for (NSDictionary *dict in array) {
         DPCategory *c = [[DPCategory alloc]init];
         [c setValues:dict];
@@ -136,6 +143,8 @@ singleton_implementation(DPMetaDataTool)
 
 - (void)setCurrentCity:(DPCity *)currentCity
 {
+    _currentDistrict = KAllDistrict;
+    
     _currentCity = currentCity;
     
     //移除之前的城市名
@@ -158,6 +167,7 @@ singleton_implementation(DPMetaDataTool)
         NSMutableArray * allSections = (NSMutableArray *)_totalCitySections;
         [allSections insertObject:_visitedSection atIndex:0];
     }
+    
 }
 
 - (void)setCurrentCategory:(NSString *)currentCategory

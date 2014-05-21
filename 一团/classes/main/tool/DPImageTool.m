@@ -14,4 +14,13 @@
 {
     [imageView setImageWithURL:[NSURL URLWithString:url] placeholderImage:place options:SDWebImageLowPriority | SDWebImageRetryFailed];
 }
+
++(void)clear
+{
+    //清除内存中的缓存图片
+    [[SDImageCache sharedImageCache] clearMemory];
+
+    //取消所有的下载请求
+    [[SDWebImageManager sharedManager] cancelAll];
+}
 @end

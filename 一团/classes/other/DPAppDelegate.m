@@ -10,6 +10,8 @@
 
 #import "DPMainController.h"
 
+#import "DPImageTool.h"
+
 @implementation DPAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -18,6 +20,12 @@
     self.window.rootViewController = [[DPMainController alloc] init];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+-(void)applicationDidReceiveMemoryWarning:(UIApplication *)application
+{
+    //清除图片缓存
+    [DPImageTool clear];
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

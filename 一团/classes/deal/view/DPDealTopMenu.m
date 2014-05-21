@@ -40,10 +40,10 @@
     self = [super initWithFrame:frame];
     if (self) {
         //1.全部分类
-        _cItem = [self addMenuItem:@"全部分类" index:0];
+        _cItem = [self addMenuItem:kAllCategory index:0];
         
         //2.全部分区
-        _dItem = [self addMenuItem:@"全部分区" index:1];
+        _dItem = [self addMenuItem:KAllDistrict index:1];
         
         //3.默认排序
         _oItem = [self addMenuItem:@"默认排序" index:2];
@@ -102,6 +102,10 @@
 #pragma mark 监听顶部item的点击
 - (void)itemClick:(DPDealTopMenuItem *)item
 {
+    if ([DPMetaDataTool sharedDPMetaDataTool].currentCity == nil) {
+        return;
+    }
+    
     //控制选中状态
     _selectedItem.selected = NO;
     if (_selectedItem == item) {

@@ -16,7 +16,7 @@
 @end
 
 @interface DPSubtitlesView : UIImageView
-
+@property (nonatomic,copy) NSString *mainTitle;//主标题
 @property (nonatomic, strong) NSArray *titles; // 所有的子标题文字
 
 @property (nonatomic,weak) id<DPSubtitlesViewDelegate> delegate;

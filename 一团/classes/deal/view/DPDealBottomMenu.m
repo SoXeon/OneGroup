@@ -20,9 +20,7 @@
 @interface DPDealBottomMenu()
 {
     UIView *_cover;
-    
-    DPDealBottomMenuItem *_selectedItem;
-    
+        
     UIView *_contentView;
 }
 @end
@@ -47,7 +45,7 @@
         
         // 内容view
         _contentView = [[UIView alloc] init];
-        _contentView.frame = CGRectMake(0, 65, self.frame.size.width, kBottomMenuItemH);
+        _contentView.frame = CGRectMake(0, 0, self.frame.size.width, kBottomMenuItemH);
         _contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         [self addSubview:_contentView];
         
@@ -55,7 +53,7 @@
         UIScrollView *scrollView = [[UIScrollView alloc]init];
         scrollView.showsHorizontalScrollIndicator = NO;
         scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-        scrollView.frame = CGRectMake(0, 65, self.frame.size.width, kBottomMenuItemH);
+        scrollView.frame = CGRectMake(0, 0, self.frame.size.width, kBottomMenuItemH);
         scrollView.backgroundColor =[UIColor whiteColor];
         [self addSubview:scrollView];
         _scrollView = scrollView;
@@ -72,7 +70,7 @@
     
     // 2.查看是否有子分类
     if (item.titles.count) { // 显示所有的子标题
-        [self showSubitlesView:item.titles];
+        [self showSubitlesView:item];
     } else { // 隐藏所有的子标题
         [self hideSubitlesView:item];
     }
@@ -101,7 +99,7 @@
 }
 
 #pragma mark 显示子标题
-- (void)showSubitlesView:(NSArray *)titles
+- (void)showSubitlesView:(DPDealBottomMenuItem *)item
 {
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDelay:kDefaultAnimDuration];
@@ -114,9 +112,11 @@
     
     //设置子标题的frame
     _subtitlesView.frame = CGRectMake(0, kBottomMenuItemH, self.frame.size.width, _subtitlesView.frame.size.height);
+    //设置子标题的主标题
+    _subtitlesView.mainTitle = [item titleForState:UIControlStateNormal];
     //设置子标题显示内容
-    _subtitlesView.titles = titles;
-    
+    _subtitlesView.titles = item.titles;
+
     if (_subtitlesView.superview == nil) { // 没有父控件
         [_subtitlesView show];
     }

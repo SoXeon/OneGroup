@@ -137,7 +137,7 @@
                 inset.top = kViewHeight;
                 _scrollView.contentInset = inset;
                 // 2.设置滚动位置
-                _scrollView.contentOffset = CGPointMake(0, -kViewHeight);
+                _scrollView.contentOffset = CGPointMake(0, -kViewHeight );
             }];
 			break;
         }

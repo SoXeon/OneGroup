@@ -10,4 +10,5 @@
 
 @interface DPImageTool : NSObject
 +(void)downloadImage:(NSString *)url placeholder:(UIImage *)place imageView:(UIImageView *)imageView;
++(void)clear;
 @end

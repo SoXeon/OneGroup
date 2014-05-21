@@ -27,6 +27,12 @@
             [item addTarget:self action:@selector(itemClickit:) forControlEvents:UIControlEventTouchUpInside];
             item.frame = CGRectMake(i * kBottomMenuItemW, 0, 0, 0);
             [_scrollView addSubview:item];
+            
+            //默认选中第0个item
+            if (i == 0) {
+                item.selected = YES;
+                _selectedItem = item;
+            }
         }
         _scrollView.contentSize = CGSizeMake(count * kBottomMenuItemW, 0);
     }

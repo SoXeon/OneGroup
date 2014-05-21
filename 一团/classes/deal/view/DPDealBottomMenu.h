@@ -9,13 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "DPSubtitlesView.h"
 
-@class DPDealBottomMenuItem;
+@class DPDealBottomMenuItem,DPSubtitlesView;
 @protocol DPSubtitlesViewDelegate;
 
 @interface DPDealBottomMenu : UIView <DPSubtitlesViewDelegate>
 {
     UIScrollView *_scrollView;
     DPSubtitlesView *_subtitlesView;
+    DPDealBottomMenuItem *_selectedItem;
 }
 @property (nonatomic, copy) void (^hideBlock)();
 

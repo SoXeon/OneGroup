@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DPDealListController : UICollectionViewController
+@interface DPDealListController : UICollectionViewController 
 
 @end

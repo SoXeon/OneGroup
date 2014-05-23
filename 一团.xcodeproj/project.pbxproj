@@ -267,6 +267,21 @@
 		E2E838541928B3B7001DC55D /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2E838531928B3B7001DC55D /* ImageIO.framework */; };
 		E2E838581928B415001DC55D /* DPImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E2E838571928B415001DC55D /* DPImageTool.m */; };
 		E2EB805D192B9A4100133BC2 /* DPDealTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EB805C192B9A4100133BC2 /* DPDealTool.m */; };
+		E2EB8060192CCF6700133BC2 /* NSString+DP.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EB805F192CCF6700133BC2 /* NSString+DP.m */; };
+		E2EB8067192DEECC00133BC2 /* DPCover.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EB8066192DEECC00133BC2 /* DPCover.m */; };
+		E2EB806A192E05A200133BC2 /* DPDealDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EB8069192E05A200133BC2 /* DPDealDetailController.m */; };
+		E2EB80E0192E238C00133BC2 /* DPBuyDock.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2EB80DF192E238C00133BC2 /* DPBuyDock.xib */; };
+		E2EB80E3192E25BA00133BC2 /* DPBuyDock.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EB80E2192E25BA00133BC2 /* DPBuyDock.m */; };
+		E2EB80E6192E2A4600133BC2 /* DPLineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EB80E5192E2A4600133BC2 /* DPLineLabel.m */; };
+		E2EB80E8192E30BD00133BC2 /* DPDetailDock.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2EB80E7192E30BD00133BC2 /* DPDetailDock.xib */; };
+		E2EB80EB192E32DD00133BC2 /* DPDetailDock.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EB80EA192E32DD00133BC2 /* DPDetailDock.m */; };
+		E2EB80EE192E460F00133BC2 /* DPDealInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EB80ED192E460F00133BC2 /* DPDealInfoController.m */; };
+		E2EB80F1192E463D00133BC2 /* DPDealWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EB80F0192E463D00133BC2 /* DPDealWebController.m */; };
+		E2EB80F4192E465F00133BC2 /* DPMerchantController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EB80F3192E465F00133BC2 /* DPMerchantController.m */; };
+		E2EB80F7192F26AD00133BC2 /* DPInfoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EB80F6192F26AD00133BC2 /* DPInfoHeaderView.m */; };
+		E2EB80F9192F26C700133BC2 /* DPInfoHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2EB80F8192F26C700133BC2 /* DPInfoHeaderView.xib */; };
+		E2EB80FC192F4A8400133BC2 /* NSDate+DP.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EB80FB192F4A8400133BC2 /* NSDate+DP.m */; };
+		E2EB80FF192F4E5800133BC2 /* DPRestrictions.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EB80FE192F4E5800133BC2 /* DPRestrictions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -619,6 +634,33 @@
 		E2E838571928B415001DC55D /* DPImageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DPImageTool.m; path = ../../main/tool/DPImageTool.m; sourceTree = "<group>"; };
 		E2EB805B192B9A4100133BC2 /* DPDealTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPDealTool.h; sourceTree = "<group>"; };
 		E2EB805C192B9A4100133BC2 /* DPDealTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPDealTool.m; sourceTree = "<group>"; };
+		E2EB805E192CCF6700133BC2 /* NSString+DP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DP.h"; sourceTree = "<group>"; };
+		E2EB805F192CCF6700133BC2 /* NSString+DP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DP.m"; sourceTree = "<group>"; };
+		E2EB8065192DEECC00133BC2 /* DPCover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPCover.h; sourceTree = "<group>"; };
+		E2EB8066192DEECC00133BC2 /* DPCover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPCover.m; sourceTree = "<group>"; };
+		E2EB8068192E05A200133BC2 /* DPDealDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPDealDetailController.h; sourceTree = "<group>"; };
+		E2EB8069192E05A200133BC2 /* DPDealDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPDealDetailController.m; sourceTree = "<group>"; };
+		E2EB80DF192E238C00133BC2 /* DPBuyDock.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPBuyDock.xib; sourceTree = "<group>"; };
+		E2EB80E1192E25BA00133BC2 /* DPBuyDock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPBuyDock.h; sourceTree = "<group>"; };
+		E2EB80E2192E25BA00133BC2 /* DPBuyDock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPBuyDock.m; sourceTree = "<group>"; };
+		E2EB80E4192E2A4600133BC2 /* DPLineLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPLineLabel.h; sourceTree = "<group>"; };
+		E2EB80E5192E2A4600133BC2 /* DPLineLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPLineLabel.m; sourceTree = "<group>"; };
+		E2EB80E7192E30BD00133BC2 /* DPDetailDock.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPDetailDock.xib; sourceTree = "<group>"; };
+		E2EB80E9192E32DD00133BC2 /* DPDetailDock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPDetailDock.h; sourceTree = "<group>"; };
+		E2EB80EA192E32DD00133BC2 /* DPDetailDock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPDetailDock.m; sourceTree = "<group>"; };
+		E2EB80EC192E460F00133BC2 /* DPDealInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPDealInfoController.h; sourceTree = "<group>"; };
+		E2EB80ED192E460F00133BC2 /* DPDealInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPDealInfoController.m; sourceTree = "<group>"; };
+		E2EB80EF192E463D00133BC2 /* DPDealWebController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPDealWebController.h; sourceTree = "<group>"; };
+		E2EB80F0192E463D00133BC2 /* DPDealWebController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPDealWebController.m; sourceTree = "<group>"; };
+		E2EB80F2192E465F00133BC2 /* DPMerchantController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPMerchantController.h; sourceTree = "<group>"; };
+		E2EB80F3192E465F00133BC2 /* DPMerchantController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPMerchantController.m; sourceTree = "<group>"; };
+		E2EB80F5192F26AD00133BC2 /* DPInfoHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPInfoHeaderView.h; sourceTree = "<group>"; };
+		E2EB80F6192F26AD00133BC2 /* DPInfoHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPInfoHeaderView.m; sourceTree = "<group>"; };
+		E2EB80F8192F26C700133BC2 /* DPInfoHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPInfoHeaderView.xib; sourceTree = "<group>"; };
+		E2EB80FA192F4A8400133BC2 /* NSDate+DP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DP.h"; sourceTree = "<group>"; };
+		E2EB80FB192F4A8400133BC2 /* NSDate+DP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DP.m"; sourceTree = "<group>"; };
+		E2EB80FD192F4E5800133BC2 /* DPRestrictions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRestrictions.h; sourceTree = "<group>"; };
+		E2EB80FE192F4E5800133BC2 /* DPRestrictions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRestrictions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -789,6 +831,7 @@
 		6431650B191FC94200DB035A /* other */ = {
 			isa = PBXGroup;
 			children = (
+				E2EB8064192DEE8F00133BC2 /* view */,
 				E2E838551928B3F2001DC55D /* Tool */,
 				E235BB081928584D00A3F4F6 /* API */,
 				E2AB1AE5192348B300B54EC8 /* Lib */,
@@ -836,6 +879,14 @@
 			children = (
 				6431652C19208CF100DB035A /* DPDealListController.h */,
 				6431652D19208CF100DB035A /* DPDealListController.m */,
+				E2EB8068192E05A200133BC2 /* DPDealDetailController.h */,
+				E2EB8069192E05A200133BC2 /* DPDealDetailController.m */,
+				E2EB80EC192E460F00133BC2 /* DPDealInfoController.h */,
+				E2EB80ED192E460F00133BC2 /* DPDealInfoController.m */,
+				E2EB80EF192E463D00133BC2 /* DPDealWebController.h */,
+				E2EB80F0192E463D00133BC2 /* DPDealWebController.m */,
+				E2EB80F2192E465F00133BC2 /* DPMerchantController.h */,
+				E2EB80F3192E465F00133BC2 /* DPMerchantController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1075,6 +1126,7 @@
 		E24979FB192447EC005D964E /* view */ = {
 			isa = PBXGroup;
 			children = (
+				E2EB80DE192E236600133BC2 /* detail */,
 				E2497A171924838F005D964E /* district */,
 				E2497A161924837F005D964E /* order */,
 				E2497A0F192462A2005D964E /* category */,
@@ -1104,6 +1156,8 @@
 				E2497A0A19245EBC005D964E /* DPCategory.m */,
 				E2497A2919249EBD005D964E /* DPOrder.h */,
 				E2497A2A19249EBD005D964E /* DPOrder.m */,
+				E2EB80FD192F4E5800133BC2 /* DPRestrictions.h */,
+				E2EB80FE192F4E5800133BC2 /* DPRestrictions.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1312,6 +1366,10 @@
 				E2C83542192273E90009F06E /* UIBarButtonItem+DP.m */,
 				E2C83543192273E90009F06E /* UIImage+DP.h */,
 				E2C83544192273E90009F06E /* UIImage+DP.m */,
+				E2EB805E192CCF6700133BC2 /* NSString+DP.h */,
+				E2EB805F192CCF6700133BC2 /* NSString+DP.m */,
+				E2EB80FA192F4A8400133BC2 /* NSDate+DP.h */,
+				E2EB80FB192F4A8400133BC2 /* NSDate+DP.m */,
 			);
 			path = Categary;
 			sourceTree = "<group>";
@@ -1387,6 +1445,33 @@
 				E2EB805C192B9A4100133BC2 /* DPDealTool.m */,
 			);
 			path = tool;
+			sourceTree = "<group>";
+		};
+		E2EB8064192DEE8F00133BC2 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				E2EB8065192DEECC00133BC2 /* DPCover.h */,
+				E2EB8066192DEECC00133BC2 /* DPCover.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		E2EB80DE192E236600133BC2 /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				E2EB80DF192E238C00133BC2 /* DPBuyDock.xib */,
+				E2EB80E1192E25BA00133BC2 /* DPBuyDock.h */,
+				E2EB80E2192E25BA00133BC2 /* DPBuyDock.m */,
+				E2EB80E4192E2A4600133BC2 /* DPLineLabel.h */,
+				E2EB80E5192E2A4600133BC2 /* DPLineLabel.m */,
+				E2EB80E7192E30BD00133BC2 /* DPDetailDock.xib */,
+				E2EB80E9192E32DD00133BC2 /* DPDetailDock.h */,
+				E2EB80EA192E32DD00133BC2 /* DPDetailDock.m */,
+				E2EB80F5192F26AD00133BC2 /* DPInfoHeaderView.h */,
+				E2EB80F6192F26AD00133BC2 /* DPInfoHeaderView.m */,
+				E2EB80F8192F26C700133BC2 /* DPInfoHeaderView.xib */,
+			);
+			path = detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1520,6 +1605,7 @@
 				E24979E619244498005D964E /* ic_arrow_down@2x.png in Resources */,
 				E24979C719244498005D964E /* btn_share@2x.png in Resources */,
 				E24979CE19244498005D964E /* ic_content.png in Resources */,
+				E2EB80F9192F26C700133BC2 /* DPInfoHeaderView.xib in Resources */,
 				E249799219244498005D964E /* ic_filter_category_-1.png in Resources */,
 				E24979CB19244498005D964E /* ic_arrow_gray@2x.png in Resources */,
 				E24979AE19244498005D964E /* btn_buy.png in Resources */,
@@ -1572,6 +1658,7 @@
 				E24979C619244498005D964E /* btn_share.png in Resources */,
 				E24979C819244498005D964E /* btn_share_pressed.png in Resources */,
 				E2C83521192218C70009F06E /* ic_more_hl.png in Resources */,
+				E2EB80E0192E238C00133BC2 /* DPBuyDock.xib in Resources */,
 				E24979D319244498005D964E /* ic_deal_collect_pressed@2x.png in Resources */,
 				E2C83511192218C70009F06E /* ic_deal_hl@2x.png in Resources */,
 				E2E8380E1928849E001DC55D /* DPDealCell.xib in Resources */,
@@ -1635,6 +1722,7 @@
 				E24979A719244498005D964E /* ic_filter_category_78@2x.png in Resources */,
 				E2C834C2192218A00009F06E /* Categories.plist in Resources */,
 				E24979AC19244498005D964E /* bg_buyBtn.png in Resources */,
+				E2EB80E8192E30BD00133BC2 /* DPDetailDock.xib in Resources */,
 				E2C8352B192218C70009F06E /* bg_navigation_right@2x.png in Resources */,
 				E24979BB19244498005D964E /* btn_dealweb@2x.png in Resources */,
 				E24979D819244498005D964E /* ic_no@2x.png in Resources */,
@@ -1680,18 +1768,23 @@
 				E2C8353C192262450009F06E /* DPCity.m in Sources */,
 				E2C83539192261CD0009F06E /* DPBaseModel.m in Sources */,
 				E2497A15192462A2005D964E /* DPCategoryMenuItem.m in Sources */,
+				E2EB80F4192E465F00133BC2 /* DPMerchantController.m in Sources */,
 				E2C83536192261020009F06E /* CitySection.m in Sources */,
 				6431654D19210BB300DB035A /* DPCityListController.m in Sources */,
 				E26C06F11923145B00E7963C /* DPMetaDataTool.m in Sources */,
 				E2E838411928B359001DC55D /* MKAnnotationView+WebCache.m in Sources */,
+				E2EB8067192DEECC00133BC2 /* DPCover.m in Sources */,
 				E2AB1AF5192348B300B54EC8 /* ChineseToPinyinResource.m in Sources */,
 				E2E8384B1928B359001DC55D /* UIButton+WebCache.m in Sources */,
 				6431650F191FC94200DB035A /* DPAppDelegate.m in Sources */,
+				E2EB80EB192E32DD00133BC2 /* DPDetailDock.m in Sources */,
 				6431652E19208CF100DB035A /* DPDealListController.m in Sources */,
 				E2C83545192273E90009F06E /* UIBarButtonItem+DP.m in Sources */,
 				64316516191FCB7700DB035A /* DPDock.m in Sources */,
 				E2E8384A1928B359001DC55D /* SDWebImagePrefetcher.m in Sources */,
 				64316510191FC94200DB035A /* main.m in Sources */,
+				E2EB8060192CCF6700133BC2 /* NSString+DP.m in Sources */,
+				E2EB80E3192E25BA00133BC2 /* DPBuyDock.m in Sources */,
 				E2C83546192273E90009F06E /* UIImage+DP.m in Sources */,
 				E2AB1AF6192348B300B54EC8 /* HanyuPinyinOutputFormat.m in Sources */,
 				E2497A0119244922005D964E /* DPDealTopMenuItem.m in Sources */,
@@ -1702,13 +1795,16 @@
 				E235BB0E1928584D00A3F4F6 /* DPAPI.m in Sources */,
 				E2E838581928B415001DC55D /* DPImageTool.m in Sources */,
 				E2497A261924961D005D964E /* DPOrderMenuItem.m in Sources */,
+				E2EB80EE192E460F00133BC2 /* DPDealInfoController.m in Sources */,
 				E2E838111928AD21001DC55D /* DPDealCell.m in Sources */,
 				6431647A191FC15400DB035A /* DPViewController.m in Sources */,
 				E2E838441928B359001DC55D /* SDWebImageCompat.m in Sources */,
 				6431653119208D0B00DB035A /* DPMapViewController.m in Sources */,
 				E2C8353F192262B50009F06E /* DPDistrict.m in Sources */,
 				E2497A14192462A2005D964E /* DPCategoryMenu.m in Sources */,
+				E2EB80E6192E2A4600133BC2 /* DPLineLabel.m in Sources */,
 				E2497A2019248EEE005D964E /* DPDistrictMenuItem.m in Sources */,
+				E2EB806A192E05A200133BC2 /* DPDealDetailController.m in Sources */,
 				E2E838421928B359001DC55D /* NSData+GIF.m in Sources */,
 				E24979FE19244815005D964E /* DPDealTopMenu.m in Sources */,
 				E2E8383F1928B359001DC55D /* MJRefreshFooterView.m in Sources */,
@@ -1726,12 +1822,16 @@
 				E2E8384D1928B359001DC55D /* UIImage+MultiFormat.m in Sources */,
 				E2497A2B19249EBD005D964E /* DPOrder.m in Sources */,
 				64316519191FD9EF00DB035A /* DPDockItem.m in Sources */,
+				E2EB80F7192F26AD00133BC2 /* DPInfoHeaderView.m in Sources */,
 				E2E8383E1928B359001DC55D /* MJRefreshBaseView.m in Sources */,
 				E2E838491928B359001DC55D /* SDWebImageManager.m in Sources */,
 				E2E838481928B359001DC55D /* SDWebImageManager+MJ.m in Sources */,
+				E2EB80FC192F4A8400133BC2 /* NSDate+DP.m in Sources */,
+				E2EB80FF192F4E5800133BC2 /* DPRestrictions.m in Sources */,
 				E235BB0F1928584D00A3F4F6 /* DPRequest.m in Sources */,
 				E2AB1AF7192348B300B54EC8 /* NSString+PinYin4Cocoa.m in Sources */,
 				6431654A1920FDFB00DB035A /* DPMoreController.m in Sources */,
+				E2EB80F1192E463D00133BC2 /* DPDealWebController.m in Sources */,
 				643165201920697700DB035A /* DPLocationItem.m in Sources */,
 				E2E8384F1928B359001DC55D /* UIImageView+MJWebCache.m in Sources */,
 				E2497A0B19245EBC005D964E /* DPCategory.m in Sources */,

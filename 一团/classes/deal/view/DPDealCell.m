@@ -16,7 +16,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        self.selected = YES;
     }
     return self;
 }
@@ -35,10 +35,28 @@
     [_purchaseCount setTitle:[NSString stringWithFormat:@"%d",deal.purchase_count] forState:UIControlStateNormal];
     
     //4.价格
-    _price.text = [NSString stringWithFormat:@"%.f",deal.current_price];
+    _price.text = deal.current_price_text;
     
     //5.标签
+    NSDateFormatter *fmt = [[NSDateFormatter alloc]init];
+    fmt.dateFormat = @"yyyy-MM-dd";
+    NSString *now = [fmt stringFromDate:[NSDate date]];
     
+    //比较当前时间和取消时间
+    NSString *icon = nil;
+    if ([deal.publish_date isEqualToString:now]) {
+      icon = @"ic_deal_new.png";
+    } else if ([deal.purchase_deadline isEqualToString:now]) {
+       icon = @"ic_deal_soonOver.png";
+    } else if ([deal.purchase_deadline compare:now] == NSOrderedAscending){
+      icon = @"ic_deal_over.png";
+    }
+    if (icon) {
+        _bage.hidden = NO;
+        _bage.image = [UIImage imageNamed:icon];
+    } else{
+        _bage.hidden = YES;
+    }
 }
 
 @end

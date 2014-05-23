@@ -5,15 +5,13 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>7B38F901-56F9-466A-A7CA-A9E1E79C5467</string>
+	<string>FE71106C-3ECC-4963-8C80-B88B942BC35F</string>
 	<key>IDESourceControlProjectName</key>
 	<string>一团</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>1DE72BBD-5C1A-4D53-BA52-F7835FA3254F</key>
 		<string>https://github.com/SoXeon/--.git</string>
-		<key>8C89257F-7878-42FD-88E5-C7B99EB260D1</key>
-		<string>https://github.com/SoXeon/NiuNiuWeiBo.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>一团.xcodeproj/project.xcworkspace</string>
@@ -21,8 +19,6 @@
 	<dict>
 		<key>1DE72BBD-5C1A-4D53-BA52-F7835FA3254F</key>
 		<string>../..</string>
-		<key>8C89257F-7878-42FD-88E5-C7B99EB260D1</key>
-		<string>../../../NiuNiuWeiBo</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/SoXeon/--.git</string>
@@ -39,14 +35,6 @@
 			<string>1DE72BBD-5C1A-4D53-BA52-F7835FA3254F</string>
 			<key>IDESourceControlWCCName</key>
 			<string>一团</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>8C89257F-7878-42FD-88E5-C7B99EB260D1</string>
-			<key>IDESourceControlWCCName</key>
-			<string>NiuNiuWeiBo</string>
 		</dict>
 	</array>
 </dict>

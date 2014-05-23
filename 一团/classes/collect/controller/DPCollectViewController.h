@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class DPDeal;
 @interface DPCollectViewController : UIViewController
-
 @end

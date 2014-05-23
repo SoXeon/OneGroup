@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @class DPDeal;
-@interface DPDealCell : UICollectionViewCell
+@interface DPDealCell : UICollectionViewCell 
 
 //描述
 @property (weak,nonatomic)IBOutlet UILabel *desc;

@@ -19,7 +19,6 @@
 {
     UIScrollView *_scrollView;
     DPInfoHeaderView *_header;
-    CGFloat _currentY;
 }
 
 @end
@@ -40,12 +39,22 @@
 #pragma mark 添加更多详情团购信息
 -(void)loadDetailDeal
 {
+    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    indicator.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin |
+    UIViewAutoresizingFlexibleRightMargin;
+    indicator.center = CGPointMake(_scrollView.frame.size.width * 0.5,CGRectGetMaxY(_header.frame) +kVMargin);
+    [_scrollView addSubview:indicator];
+    [indicator startAnimating];
+    
     [[DPDealTool sharedDPDealTool]dealWithID:_deal.deal_id success:^(DPDeal *deal) {
         _deal = deal;
         _header.deal = deal;
         
         //添加详情数据
         [self addDetailViews];
+        
+        //移除菊花
+        [indicator removeFromSuperview];
     } error:^(NSError *error) {
         
     }];
@@ -54,7 +63,7 @@
 #pragma mark 添加详情控件
 -(void)addDetailViews
 {
-    _currentY = CGRectGetMaxY(_header.frame) + kVMargin;
+    _scrollView.contentSize = CGSizeMake(0, CGRectGetMaxY(_header.frame) +kVMargin);
     
     //团购详情
     [self addTextView:@"ic_content.png" title:@"团购详情" content:_deal.details];
@@ -76,9 +85,10 @@
     
     DPInfoTextView *textView = [DPInfoTextView infoTextView];
 
+    CGFloat y = _scrollView.contentSize.height;
     CGFloat w = _scrollView.frame.size.width;
     CGFloat h = textView.frame.size.height;
-    textView.frame = CGRectMake(0, _currentY, w, h);
+    textView.frame = CGRectMake(0, y,w, h);
     
     textView.title = title;
     textView.content = content;
@@ -86,11 +96,8 @@
     
     [_scrollView addSubview:textView];
     
-    //计算lastY
-    _currentY = CGRectGetMaxY(textView.frame) + kVMargin;
-    
     //设置内容尺寸
-    _scrollView.contentSize = CGSizeMake(0, _currentY);
+    _scrollView.contentSize = CGSizeMake(0, CGRectGetMaxY(textView.frame) + kVMargin);
 
 }
 
@@ -109,7 +116,7 @@
 {
     //添加滚动视图
     UIScrollView *scrollView = [[UIScrollView alloc]init];
-    scrollView.bounds = CGRectMake(0, 0, 430, self.view.frame.size.height);
+    scrollView.bounds = CGRectMake(0, 0, 620, self.view.frame.size.height);
     scrollView.showsVerticalScrollIndicator = NO;
     CGFloat x = self.view.frame.size.width * 0.5;
     CGFloat y = self.view.frame.size.height * 0.5;

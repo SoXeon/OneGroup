@@ -14,6 +14,7 @@
 #import "DPDealInfoController.h"
 #import "DPDealWebController.h"
 #import "DPMerchantController.h"
+#import "DPCollectTool.h"
 
 
 @interface DPDealDetailController () <DPDetailDockDelegate>
@@ -43,7 +44,6 @@
     //团购简介
     DPDealInfoController *info = [[DPDealInfoController alloc]init];
     info.deal = _deal;
-    info.view.backgroundColor = [UIColor redColor];
     [self addChildViewController:info];
     //默认选中第0个控制器
     [self detailDock:nil btnClickFrom:0 to:0];
@@ -106,11 +106,27 @@
     //设置标题
     self.title = _deal.title;
     
+    //处理团购的收藏属性
+    [[DPCollectTool sharedDPCollectTool] handleDeal:_deal];
+    
+    NSString *collectIcon = _deal.collected ? @"ic_collect_suc.png" : @"ic_deal_collect.png";
+    
     //设置导航
     self.navigationItem.rightBarButtonItems = @[
     [UIBarButtonItem itemWithIcon:@"btn_share.png" highlightedIcon:@"btn_share_pressed.png" target:nil action:nil],
-    [UIBarButtonItem itemWithIcon:@"ic_deal_collect.png" highlightedIcon:@"ic_deal_collect_pressed.png" target:nil action:nil]];
+    [UIBarButtonItem itemWithIcon:collectIcon highlightedIcon:@"ic_deal_collect_pressed.png" target:self action:@selector(collect)]];
 }
 
+-(void)collect
+{
+    UIButton *btn = (UIButton *)[self.navigationItem.rightBarButtonItems[1] customView];
+    if (_deal.collected) {
+        [[DPCollectTool sharedDPCollectTool] uncollectDeal:_deal];
+        [btn setBackgroundImage:[UIImage imageNamed:@"ic_deal_collect.png"] forState:UIControlStateNormal];
+    } else {
+        [[DPCollectTool sharedDPCollectTool] collectDeal:_deal];
+        [btn setBackgroundImage:[UIImage imageNamed:@"ic_collect_suc.png"] forState:UIControlStateNormal];
+    }
+}
 
 @end

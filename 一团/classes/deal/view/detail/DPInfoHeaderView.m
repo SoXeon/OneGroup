@@ -35,7 +35,7 @@
         
         NSDateComponents *cmps = [now compare:dealline];
         
-        NSString *timeStr = [NSString stringWithFormat:@"%d 天 %d 小时 %d 分钟",cmps.day,cmps.hour,cmps.minute];
+        NSString *timeStr = [NSString stringWithFormat:@"%d 天 %d 小时 ",cmps.day,cmps.hour];
         
         [_time setTitle:timeStr forState:UIControlStateNormal];
     }

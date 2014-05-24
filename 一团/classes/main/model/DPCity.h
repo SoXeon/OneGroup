@@ -7,8 +7,10 @@
 //
 
 #import "DPBaseModel.h"
-
+#import <CoreLocation/CoreLocation.h>
 @interface DPCity : DPBaseModel
 @property (nonatomic,strong) NSArray *districts;//分区
 @property (nonatomic,assign) BOOL hot;//热度
+
+@property (nonatomic,assign)CLLocationCoordinate2D position;
 @end

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Singleton.h"
+#import <MapKit/MapKit.h>
 
 @class DPDeal;
 
@@ -25,4 +26,9 @@ singleton_interface(DPDealTool)
 
 #pragma mark 获取指定团购详情数据
 -(void)dealWithID:(NSString *)ID success:(DealSuccessBlock)success error:(DealErrorBlock)error;
+
+#pragma mark 获得周边团购信息
+-(void)dealsWithPos:(CLLocationCoordinate2D)pos success:(DealsSuccessBlock)success error:(DealsErrorBlock)error;
+
+
 @end

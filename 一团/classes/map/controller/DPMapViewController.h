@@ -6,8 +6,8 @@
 //  Copyright (c) 2014年 戴鹏. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "DPBaseShowDetailController.h"
 
-@interface DPMapViewController : UIViewController
+@interface DPMapViewController : DPBaseShowDetailController
 
 @end

@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 戴鹏. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "DPRoundRectView.h"
 @class DPDeal;
-@interface DPInfoHeaderView : UIView
+@interface DPInfoHeaderView : DPRoundRectView
 
 @property (weak,nonatomic) IBOutlet UIImageView *image;
 @property (weak,nonatomic) IBOutlet UILabel *desc;

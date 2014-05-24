@@ -22,6 +22,8 @@ singleton_interface(DPMetaDataTool)
 
 -(DPOrder *)orderWithName:(NSString *)name;
 
+-(NSString *)iconWithCategoryName:(NSString *)name;
+
 @property (nonatomic,strong) DPCity *currentCity;//当前选中的城市
 @property (nonatomic,strong) NSString *currentCategory;//当前选中的分类
 @property (nonatomic,strong) NSString *currentDistrict;//当前选中的区域

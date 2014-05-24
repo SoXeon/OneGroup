@@ -34,14 +34,38 @@ singleton_implementation(DPDealTool)
     return self;
 }
 
+#pragma mark 获取大批量团购
+-(void)getDealsWithParams:(NSDictionary *)params success:(DealsSuccessBlock)success error:(DealsErrorBlock)error
+{
+    //发送请求
+    [self requestWithURL:@"v1/deal/find_deals" params:params block:^(id result, NSError *errorObj) {
+        if (errorObj) {//请求失败
+            if (error) {
+                error(errorObj);
+            }
+        } else if (success) {//请求成功
+            NSArray *array = result[@"deals"];
+            NSMutableArray *deals = [NSMutableArray array];
+            
+            for (NSDictionary *dict in array) {
+                DPDeal *d = [[DPDeal alloc]init];
+                [d setValues:dict];
+                [deals addObject:d];
+            }
+            success(deals,[result[@"total_count"]intValue]);
+        }
+    }];
+}
+
 #pragma mark 获取团购详情
 -(void)dealWithID:(NSString *)ID success:(DealSuccessBlock)success error:(DealErrorBlock)error
 {
     [self requestWithURL:@"v1/deal/get_single_deal" params:@{@"deal_id":ID} block:^(id result, NSError *errorObj) {
-        if (result) {
+        NSArray *deals = result[@"deals"];
+        if (deals.count) {
             if (success) {
                 DPDeal *deal = [[DPDeal alloc]init];
-                [deal setValues:result[@"deals"][0]];
+                [deal setValues:deals[0]];
                 success(deal);
             }
         } else {
@@ -83,25 +107,17 @@ singleton_implementation(DPDealTool)
     [params setObject:@(page) forKey:@"page"];
     
     //发送请求
-    [self requestWithURL:@"v1/deal/find_deals" params:params block:^(id result, NSError *errorObj) {
-        if (errorObj) {//请求失败
-            if (error) {
-                error(errorObj);
-            }
-        } else if (success) {//请求成功
-           NSArray *array = result[@"deals"];
-            
-           NSMutableArray *deals = [NSMutableArray array];
-            
-            for (NSDictionary *dict in array) {
-                DPDeal *d = [[DPDeal alloc]init];
-                [d setValues:dict];
-                [deals addObject:d];
-            }
-            success(deals,[result[@"total_count"]intValue]);
-        }
-    }];
+    [self getDealsWithParams:params success:success error:error];
 
+}
+
+#pragma mark 获取周边团购
+-(void)dealsWithPos:(CLLocationCoordinate2D)pos success:(DealsSuccessBlock)success error:(DealsErrorBlock)error
+{
+    [self getDealsWithParams:@{@"city":@"北京",
+                               @"latitude":@(pos.latitude),
+                               @"longitude":@(pos.longitude),
+                               @"radius":@5000 }success:success error:error];
 }
 
 #pragma mark 封装了大众点评的所有请求

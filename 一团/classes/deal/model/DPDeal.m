@@ -38,4 +38,33 @@
     }
 }
 
+-(BOOL)isEqual:(DPDeal *)other
+{
+    return [other.deal_id isEqualToString:_deal_id];
+}
+
+-(void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:_purchase_deadline forKey:@"_purchase_deadline"];
+    [aCoder encodeObject:_deal_id forKey:@"_deal_id"];
+    [aCoder encodeObject:_image_url forKey:@"_image_url"];
+    [aCoder encodeObject:_desc forKey:@"_desc"];
+    [aCoder encodeDouble:_current_price forKey:@"_current_price"];
+    [aCoder encodeInt:_purchase_count forKey:@"_purchase_count"];
+}
+
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    if (self = [super init]) {
+        self.purchase_deadline = [aDecoder decodeObjectForKey:@"_purchase_deadline"];
+        self.deal_id = [aDecoder decodeObjectForKey:@"_deal_id"];
+        self.image_url = [aDecoder decodeObjectForKey:@"_image_url"];
+        self.desc = [aDecoder decodeObjectForKey:@"_desc"];
+        self.current_price = [aDecoder decodeDoubleForKey:@"_current_price"];
+        self.purchase_count = [aDecoder decodeIntForKey:@"_purchase_count"];
+
+    }
+    return self;
+}
+
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "DPInfoHeaderView.h"
-#import "UIImage+DP.h"
 #import "NSDate+DP.h"
 #import "DPDeal.h"
 #import "DPImageTool.h"
@@ -19,30 +18,31 @@
 {
     _deal = deal;
     
-    //下载图片
-    [DPImageTool downloadImage:deal.image_url placeholder:[UIImage imageNamed:@"placeholder_deal.png"] imageView:_image];
+    if (deal.restrictions) {
+        //设置支持退款
+        _anyTimeBack.enabled = deal.restrictions.is_refundable;
+        _expireBack.enabled = _anyTimeBack.enabled;
+    } else {
+        //下载图片
+        [DPImageTool downloadImage:deal.image_url placeholder:[UIImage imageNamed:@"placeholder_deal.png"] imageView:_image];
+        
+        //设置剩余时间
+        NSDateFormatter *fmt = [[NSDateFormatter alloc]init];
+        fmt.dateFormat = @"yyyy-MM-dd";
+        NSDate *dealline = [fmt dateFromString:deal.purchase_deadline];
+        dealline = [dealline dateByAddingTimeInterval:24 * 3600];
+        NSDate *now = [NSDate date];
+        
+        NSDateComponents *cmps = [now compare:dealline];
+        
+        NSString *timeStr = [NSString stringWithFormat:@"%d 天 %d 小时 %d 分钟",cmps.day,cmps.hour,cmps.minute];
+        
+        [_time setTitle:timeStr forState:UIControlStateNormal];
+    }
     
     //购买人数
     NSString *pc = [NSString stringWithFormat:@"%d人已购买",deal.purchase_count];
     [_purchaseCount setTitle:pc forState:UIControlStateNormal];
-    
-    //设置剩余时间
-    NSDateFormatter *fmt = [[NSDateFormatter alloc]init];
-    fmt.dateFormat = @"yyyy-MM-dd";
-    NSDate *dealline = [fmt dateFromString:deal.purchase_deadline];
-    dealline = [dealline dateByAddingTimeInterval:24 * 3600];
-    NSDate *now = [NSDate date];
-    
-    NSDateComponents *cmps = [now compare:dealline];
-    
-    NSString *timeStr = [NSString stringWithFormat:@"%d 天 %d 小时 %d 分钟",cmps.day,cmps.hour,cmps.minute];
-    
-    [_time setTitle:timeStr forState:UIControlStateNormal];
-    
-    
-    //设置支持退款
-    _anyTimeBack.enabled = deal.restrictions.is_refundable;
-    _expireBack.enabled = _anyTimeBack.enabled;
     
     //设置描述
     _desc.text = deal.desc;
@@ -78,8 +78,5 @@
     return [[NSBundle mainBundle] loadNibNamed:@"DPInfoHeaderView" owner:nil options:nil][0];
 }
 
--(void)drawRect:(CGRect)rect
-{
-    [[UIImage resizedImage:@"bg_order_cell.png"] drawInRect:rect];
-}
+
 @end

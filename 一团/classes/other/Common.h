@@ -32,6 +32,8 @@
 #define kCategoryChangeNote @"catregory_change"
 //排序改变的通知
 #define kOrderChangeNote @"order_change"
+//收藏改变的通知
+#define kCollectChangeNote @"collect_change"
 //城市的key
 #define kCityKey @"city"
 

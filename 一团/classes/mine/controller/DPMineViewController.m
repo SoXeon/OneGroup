@@ -7,6 +7,7 @@
 //
 
 #import "DPMineViewController.h"
+#import "DPDealTool.h"
 
 @interface DPMineViewController ()
 
@@ -22,8 +23,14 @@
 
     self.title = @"我的";
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"退出登录" style:UIBarButtonItemStyleBordered target:nil action:nil ];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"退出登录" style:UIBarButtonItemStyleBordered target:self action:@selector(logout)];
 }
 
+-(void)logout
+{
+    [[DPDealTool sharedDPDealTool] dealsWithPage:1 success:^(NSArray *deals, int totalCount) {
+        [self showDetail:deals[0]];
+    } error:nil];
+}
 
 @end

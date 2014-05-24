@@ -10,12 +10,14 @@
 #import "DPCityListController.h"
 #import "DPCity.h"
 #import "DPMetaDataTool.h"
+#import "DPLocationItem.h"
 
 #define kImageScale 0.5
 
 @interface DPLocationItem() <UIPopoverControllerDelegate>
 {
     UIPopoverController *_popover;
+    UIActivityIndicatorView *_indicator;
 }
 
 @end
@@ -47,9 +49,12 @@
         
         //监听城市改变的通知
         [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(cityChange) name:kCityChangeNote object:nil];
+
     }
     return self;
 }
+
+
 
 -(void)cityChange
 {

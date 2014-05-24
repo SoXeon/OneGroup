@@ -34,4 +34,8 @@
 @property (nonatomic,strong)DPRestrictions *restrictions;//约束
 
 @property (nonatomic,assign)BOOL collected;//是否被收藏
+
+//商家信息
+@property (nonatomic,strong) NSArray *businesses;
+
 @end

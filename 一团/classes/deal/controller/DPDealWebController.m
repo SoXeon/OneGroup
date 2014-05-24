@@ -32,7 +32,7 @@
 {
     [super viewDidLoad];
     
-    NSString *ID = [_deal.deal_id substringFromIndex:[_deal.deal_id rangeOfString:@"_"].location + 1];
+    NSString *ID = [_deal.deal_id substringFromIndex:[_deal.deal_id rangeOfString:@"-"].location + 1];
     NSString *url = [NSString stringWithFormat:@"http://m.dianping.com/tuan/deal/moreinfo/%@",ID];
 
     [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];

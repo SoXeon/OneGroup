@@ -282,6 +282,11 @@
 		E2EB80F9192F26C700133BC2 /* DPInfoHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2EB80F8192F26C700133BC2 /* DPInfoHeaderView.xib */; };
 		E2EB80FC192F4A8400133BC2 /* NSDate+DP.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EB80FB192F4A8400133BC2 /* NSDate+DP.m */; };
 		E2EB80FF192F4E5800133BC2 /* DPRestrictions.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EB80FE192F4E5800133BC2 /* DPRestrictions.m */; };
+		E2EB8102192F8C6800133BC2 /* DPInfoTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EB8101192F8C6800133BC2 /* DPInfoTextView.m */; };
+		E2EB8104192F8C8600133BC2 /* DPInfoTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2EB8103192F8C8600133BC2 /* DPInfoTextView.xib */; };
+		E2EB8107192FA0B800133BC2 /* DPRoundRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EB8106192FA0B800133BC2 /* DPRoundRectView.m */; };
+		E2EB810A192FAA6B00133BC2 /* DPCollectTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EB8109192FAA6B00133BC2 /* DPCollectTool.m */; };
+		E2EB810D19302D0300133BC2 /* DPBaseDealListController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2EB810C19302D0300133BC2 /* DPBaseDealListController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -661,6 +666,15 @@
 		E2EB80FB192F4A8400133BC2 /* NSDate+DP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DP.m"; sourceTree = "<group>"; };
 		E2EB80FD192F4E5800133BC2 /* DPRestrictions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRestrictions.h; sourceTree = "<group>"; };
 		E2EB80FE192F4E5800133BC2 /* DPRestrictions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRestrictions.m; sourceTree = "<group>"; };
+		E2EB8100192F8C6800133BC2 /* DPInfoTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPInfoTextView.h; sourceTree = "<group>"; };
+		E2EB8101192F8C6800133BC2 /* DPInfoTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPInfoTextView.m; sourceTree = "<group>"; };
+		E2EB8103192F8C8600133BC2 /* DPInfoTextView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPInfoTextView.xib; sourceTree = "<group>"; };
+		E2EB8105192FA0B800133BC2 /* DPRoundRectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRoundRectView.h; sourceTree = "<group>"; };
+		E2EB8106192FA0B800133BC2 /* DPRoundRectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRoundRectView.m; sourceTree = "<group>"; };
+		E2EB8108192FAA6B00133BC2 /* DPCollectTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPCollectTool.h; sourceTree = "<group>"; };
+		E2EB8109192FAA6B00133BC2 /* DPCollectTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPCollectTool.m; sourceTree = "<group>"; };
+		E2EB810B19302D0300133BC2 /* DPBaseDealListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPBaseDealListController.h; sourceTree = "<group>"; };
+		E2EB810C19302D0300133BC2 /* DPBaseDealListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPBaseDealListController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -930,6 +944,8 @@
 			children = (
 				643165391920F04D00DB035A /* DPNavigationController.h */,
 				6431653A1920F04D00DB035A /* DPNavigationController.m */,
+				E2EB810B19302D0300133BC2 /* DPBaseDealListController.h */,
+				E2EB810C19302D0300133BC2 /* DPBaseDealListController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1443,6 +1459,8 @@
 			children = (
 				E2EB805B192B9A4100133BC2 /* DPDealTool.h */,
 				E2EB805C192B9A4100133BC2 /* DPDealTool.m */,
+				E2EB8108192FAA6B00133BC2 /* DPCollectTool.h */,
+				E2EB8109192FAA6B00133BC2 /* DPCollectTool.m */,
 			);
 			path = tool;
 			sourceTree = "<group>";
@@ -1470,6 +1488,11 @@
 				E2EB80F5192F26AD00133BC2 /* DPInfoHeaderView.h */,
 				E2EB80F6192F26AD00133BC2 /* DPInfoHeaderView.m */,
 				E2EB80F8192F26C700133BC2 /* DPInfoHeaderView.xib */,
+				E2EB8100192F8C6800133BC2 /* DPInfoTextView.h */,
+				E2EB8101192F8C6800133BC2 /* DPInfoTextView.m */,
+				E2EB8103192F8C8600133BC2 /* DPInfoTextView.xib */,
+				E2EB8105192FA0B800133BC2 /* DPRoundRectView.h */,
+				E2EB8106192FA0B800133BC2 /* DPRoundRectView.m */,
 			);
 			path = detail;
 			sourceTree = "<group>";
@@ -1724,6 +1747,7 @@
 				E24979AC19244498005D964E /* bg_buyBtn.png in Resources */,
 				E2EB80E8192E30BD00133BC2 /* DPDetailDock.xib in Resources */,
 				E2C8352B192218C70009F06E /* bg_navigation_right@2x.png in Resources */,
+				E2EB8104192F8C8600133BC2 /* DPInfoTextView.xib in Resources */,
 				E24979BB19244498005D964E /* btn_dealweb@2x.png in Resources */,
 				E24979D819244498005D964E /* ic_no@2x.png in Resources */,
 				E249799A19244498005D964E /* ic_filter_category_2.png in Resources */,
@@ -1761,6 +1785,7 @@
 				E2E8384E1928B359001DC55D /* UIImage+WebP.m in Sources */,
 				E2E838471928B359001DC55D /* SDWebImageDownloaderOperation.m in Sources */,
 				E2497A0419245C7A005D964E /* DPDealBottomMenu.m in Sources */,
+				E2EB810D19302D0300133BC2 /* DPBaseDealListController.m in Sources */,
 				E2497A1A19248CA3005D964E /* DPDistrictMenu.m in Sources */,
 				E2AB1AF8192348B300B54EC8 /* PinyinFormatter.m in Sources */,
 				E2E838401928B359001DC55D /* MJRefreshHeaderView.m in Sources */,
@@ -1797,6 +1822,7 @@
 				E2497A261924961D005D964E /* DPOrderMenuItem.m in Sources */,
 				E2EB80EE192E460F00133BC2 /* DPDealInfoController.m in Sources */,
 				E2E838111928AD21001DC55D /* DPDealCell.m in Sources */,
+				E2EB810A192FAA6B00133BC2 /* DPCollectTool.m in Sources */,
 				6431647A191FC15400DB035A /* DPViewController.m in Sources */,
 				E2E838441928B359001DC55D /* SDWebImageCompat.m in Sources */,
 				6431653119208D0B00DB035A /* DPMapViewController.m in Sources */,
@@ -1814,6 +1840,7 @@
 				6431652319206F6A00DB035A /* DPTabItem.m in Sources */,
 				E2E838431928B359001DC55D /* SDImageCache.m in Sources */,
 				6431653B1920F04D00DB035A /* DPNavigationController.m in Sources */,
+				E2EB8107192FA0B800133BC2 /* DPRoundRectView.m in Sources */,
 				E2EB805D192B9A4100133BC2 /* DPDealTool.m in Sources */,
 				E2C835491922744C0009F06E /* NSObject+Value.m in Sources */,
 				6431653719208D3500DB035A /* DPCollectViewController.m in Sources */,
@@ -1824,6 +1851,7 @@
 				64316519191FD9EF00DB035A /* DPDockItem.m in Sources */,
 				E2EB80F7192F26AD00133BC2 /* DPInfoHeaderView.m in Sources */,
 				E2E8383E1928B359001DC55D /* MJRefreshBaseView.m in Sources */,
+				E2EB8102192F8C6800133BC2 /* DPInfoTextView.m in Sources */,
 				E2E838491928B359001DC55D /* SDWebImageManager.m in Sources */,
 				E2E838481928B359001DC55D /* SDWebImageManager+MJ.m in Sources */,
 				E2EB80FC192F4A8400133BC2 /* NSDate+DP.m in Sources */,

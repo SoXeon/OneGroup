@@ -20,6 +20,12 @@
     _currentPrice.text = deal.current_price_text;
 }
 
+- (IBAction)buy {
+    NSString *ID = [_deal.deal_id substringFromIndex:[_deal.deal_id rangeOfString:@"-"].location +1];
+    NSString *url = [NSString stringWithFormat:@"http://o.p.dianping.com/buy/d%@",ID];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+}
+
 +(id)buyDock
 {
     return [[NSBundle mainBundle] loadNibNamed:@"DPBuyDock" owner:nil options:nil][0];

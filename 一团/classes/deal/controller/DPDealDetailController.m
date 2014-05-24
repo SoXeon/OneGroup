@@ -15,11 +15,13 @@
 #import "DPDealWebController.h"
 #import "DPMerchantController.h"
 #import "DPCollectTool.h"
+#import "DPCover.h"
 
 
 @interface DPDealDetailController () <DPDetailDockDelegate>
 {
     DPDetailDock *_detailDock;
+    DPCover *_cover;
 }
 @end
 
@@ -36,6 +38,7 @@
     [self addDetailDock];
     
     [self addAllChildControllers];
+    
 }
 
 #pragma mark 初始化自控制器
@@ -82,7 +85,7 @@
     DPDetailDock *dock = [DPDetailDock detailDock];
     CGSize size = dock.frame.size;
     CGFloat x = self.view.frame.size.width - size.width;
-    CGFloat y = self.view.frame.size.height - size.height - 100;
+    CGFloat y = self.view.frame.size.height - size.height - 300;
     dock.frame = CGRectMake( x, y, 0, 0);
     dock.delegate = self;
     [self.view addSubview:dock];
@@ -94,7 +97,7 @@
 {
     DPBuyDock *dock = [DPBuyDock buyDock];
     dock.deal = _deal;
-    dock.frame = CGRectMake(0, 0, self.view.frame.size.width, 60);
+    dock.frame = CGRectMake(0, 60, self.view.frame.size.width, 60);
     [self.view addSubview:dock];
 }
 
@@ -115,6 +118,7 @@
     self.navigationItem.rightBarButtonItems = @[
     [UIBarButtonItem itemWithIcon:@"btn_share.png" highlightedIcon:@"btn_share_pressed.png" target:nil action:nil],
     [UIBarButtonItem itemWithIcon:collectIcon highlightedIcon:@"ic_deal_collect_pressed.png" target:self action:@selector(collect)]];
+    
 }
 
 -(void)collect
@@ -128,5 +132,7 @@
         [btn setBackgroundImage:[UIImage imageNamed:@"ic_collect_suc.png"] forState:UIControlStateNormal];
     }
 }
+
+
 
 @end

@@ -9,7 +9,7 @@
 @class DPRestrictions;
 
 #import <Foundation/Foundation.h>
-@interface DPDeal : NSObject
+@interface DPDeal : NSObject <NSCoding>
 @property (nonatomic, copy) NSString *deal_id; // 团购ID
 @property (nonatomic, copy) NSString *title; // 标题
 @property (nonatomic, copy) NSString *desc; // 描述
@@ -32,4 +32,6 @@
 @property (nonatomic,copy)NSString *details;//团购详情
 @property (nonatomic,copy)NSString *notice;//重要通知
 @property (nonatomic,strong)DPRestrictions *restrictions;//约束
+
+@property (nonatomic,assign)BOOL collected;//是否被收藏
 @end

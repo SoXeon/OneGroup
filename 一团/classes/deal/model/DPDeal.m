@@ -10,6 +10,7 @@
 #import "DPRestrictions.h"
 #import "NSString+DP.h"
 #import "NSObject+Value.h"
+#import "DPBusiness.h"
 
 @implementation DPDeal
 
@@ -45,6 +46,9 @@
 
 -(void)encodeWithCoder:(NSCoder *)aCoder
 {
+    [aCoder encodeObject:_title forKey:@"_title"];
+    [aCoder encodeDouble:_list_price forKey:@"_list_price"];
+    
     [aCoder encodeObject:_purchase_deadline forKey:@"_purchase_deadline"];
     [aCoder encodeObject:_deal_id forKey:@"_deal_id"];
     [aCoder encodeObject:_image_url forKey:@"_image_url"];
@@ -56,6 +60,8 @@
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super init]) {
+        self.title = [aDecoder decodeObjectForKey:@"_title"];
+        self.list_price = [aDecoder decodeDoubleForKey:@"_list_price"];
         self.purchase_deadline = [aDecoder decodeObjectForKey:@"_purchase_deadline"];
         self.deal_id = [aDecoder decodeObjectForKey:@"_deal_id"];
         self.image_url = [aDecoder decodeObjectForKey:@"_image_url"];
@@ -65,6 +71,22 @@
 
     }
     return self;
+}
+
+-(void)setBusinesses:(NSArray *)businesses
+{
+    NSDictionary *obj = [businesses lastObject];
+    if ([obj isKindOfClass:[NSDictionary class]]) {
+        NSMutableArray *temp = [NSMutableArray array];
+        for (NSDictionary *dict in businesses) {
+            DPBusiness *b = [[DPBusiness alloc]init];
+            [b setValues:dict];
+            [temp addObject:b];
+        }
+        _businesses = temp;
+    } else {
+        _businesses = businesses;
+    }
 }
 
 @end

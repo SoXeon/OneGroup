@@ -7,22 +7,13 @@
 //
 
 #import "DPInfoTextView.h"
-#import "UIImage+DP.h"
 
 @implementation DPInfoTextView
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
 
 +(id)infoTextView
 {
-    return [[NSBundle mainBundle]loadNibNamed:@"DPInfoTextView" owner:nil options:nil];
+    return [[NSBundle mainBundle]loadNibNamed:@"DPInfoTextView" owner:nil options:nil][0];
 }
 
 -(void)setContent:(NSString *)content

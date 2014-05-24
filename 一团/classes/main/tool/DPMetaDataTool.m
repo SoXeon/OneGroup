@@ -1,4 +1,4 @@
-//
+ //
 //  DPMetaData.m
 //  一团
 //
@@ -66,6 +66,23 @@ singleton_implementation(DPMetaDataTool)
     for (DPOrder *order in _totalOrders) {
         if ([name isEqualToString:order.name]) {
             return order;
+        }
+    }
+    return nil;
+}
+
+#pragma mark 通过分类名称取得图标
+- (NSString *)iconWithCategoryName:(NSString *)name
+{
+    for (DPCategory *c in _totalCategories) {
+        //分类名称一致
+        if ([c.name isEqualToString:name]) {
+            return c.icon;
+        }
+        
+        //有这个子分类
+        if ([c.subcategories containsObject:name]) {
+            return  c.icon;
         }
     }
     return nil;

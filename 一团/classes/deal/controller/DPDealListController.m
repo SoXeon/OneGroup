@@ -56,7 +56,7 @@
     //添加刷新控件
     [self addRefresh];
     
-    [DPMetaDataTool sharedDPMetaDataTool].currentCity = [DPMetaDataTool sharedDPMetaDataTool].totalCities[@"上海"];
+    [DPMetaDataTool sharedDPMetaDataTool].currentCity = [DPMetaDataTool sharedDPMetaDataTool].totalCities[@"北京"];
     
 }
 
@@ -72,12 +72,12 @@
    }
     
     MJRefreshHeaderView *header = [MJRefreshHeaderView header];
-    header.scrollView = self.collectionView;
+    header.scrollView = _collectionView;
     header.delegate = self;
     _header = header;
     
     MJRefreshFooterView *footer = [MJRefreshFooterView footer];
-    footer.scrollView = self.collectionView;
+    footer.scrollView = _collectionView;
     footer.delegate = self;
     _footer = footer;
 }
@@ -102,7 +102,7 @@
         //添加数据
         [_deals addObjectsFromArray:deals];
         //刷新表格
-        [self.collectionView reloadData];
+        [_collectionView reloadData];
         //恢复刷新状态
         [refreshView endRefreshing];
         //判断下拉加载更多是否要刷新
@@ -141,7 +141,7 @@
     [[DPDealTool sharedDPDealTool] dealsWithPage:_page success:^(NSArray *deals,int totalCount) {
         [_deals addObjectsFromArray:deals];
         
-        [self.collectionView reloadData];
+        [_collectionView reloadData];
     } error:nil];
 }
 

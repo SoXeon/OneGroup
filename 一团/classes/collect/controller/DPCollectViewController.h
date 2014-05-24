@@ -6,7 +6,6 @@
 //  Copyright (c) 2014年 戴鹏. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-@class DPDeal;
-@interface DPCollectViewController : UIViewController
+#import "DPBaseDealListController.h"
+@interface DPCollectViewController : DPBaseDealListController
 @end

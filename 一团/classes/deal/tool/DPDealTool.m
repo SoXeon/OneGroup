@@ -37,10 +37,10 @@ singleton_implementation(DPDealTool)
 #pragma mark 获取团购详情
 -(void)dealWithID:(NSString *)ID success:(DealSuccessBlock)success error:(DealErrorBlock)error
 {
-    [self requestWithURL:@"v1/deal/get_single_deal" params:@{@"deal_id": ID} block:^(id result, NSError *errorObj) {
+    [self requestWithURL:@"v1/deal/get_single_deal" params:@{@"deal_id":ID} block:^(id result, NSError *errorObj) {
         if (result) {
             if (success) {
-                DPDeal *deal = [[DPDeal alloc] init];
+                DPDeal *deal = [[DPDeal alloc]init];
                 [deal setValues:result[@"deals"][0]];
                 success(deal);
             }

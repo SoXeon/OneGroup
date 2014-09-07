@@ -38,6 +38,7 @@
     [self.view  addSubview:_contentView];
     CGFloat w = self.view.frame.size.width - kDockItemW;
     CGFloat h = self.view.frame.size.height;
+    
     _contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     _contentView.frame = CGRectMake(kDockItemW, 0, w, h);
     [self.view addSubview:_contentView];

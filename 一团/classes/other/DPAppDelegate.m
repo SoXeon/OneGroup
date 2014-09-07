@@ -7,9 +7,7 @@
 //
 
 #import "DPAppDelegate.h"
-
 #import "DPMainController.h"
-
 #import "DPImageTool.h"
 
 @implementation DPAppDelegate

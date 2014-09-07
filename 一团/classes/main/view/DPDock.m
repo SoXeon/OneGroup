@@ -29,7 +29,7 @@
         //自动伸缩，针对高度,右边间距
         self.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleRightMargin;
         
-        //设置背景颜色
+        //设置背景颜色,这里可以平铺，填充背景
         self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_tabbar.png"]];
         
         //添加LOGO

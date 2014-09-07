@@ -47,6 +47,7 @@
 
 - (void)setIcon:(NSString *)icon selectedIcon:(NSString *)selectedIcon
 {
+    //这样会调用上面的Set方法
     self.icon = icon;
     self.selectedIcon = selectedIcon;
 }

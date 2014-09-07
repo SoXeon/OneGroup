@@ -13,6 +13,7 @@
     UIImageView *_divider;
 }
 - (void)setIcon:(NSString *)icon selectedIcon:(NSString *)selectedIcon;
+
 @property (nonatomic,copy) NSString *icon;
 @property (nonatomic,copy) NSString *selectedIcon;
 

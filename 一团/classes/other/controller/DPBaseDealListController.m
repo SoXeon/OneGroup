@@ -95,7 +95,7 @@
     DPDealCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
     
     cell.deal = self.totalDeals[indexPath.row];
-    
+                            
     return cell;
 }
 

@@ -13,6 +13,7 @@
 #import "DPOrder.h"
 #import "DPDeal.h"
 #import "NSObject+Value.h"
+#import "DPLocationTool.h"
 
 typedef void (^RequestBlock)(id result,NSError *errorObj);
 
@@ -114,6 +115,8 @@ singleton_implementation(DPDealTool)
 #pragma mark 获取周边团购
 -(void)dealsWithPos:(CLLocationCoordinate2D)pos success:(DealsSuccessBlock)success error:(DealsErrorBlock)error
 {
+    
+    
     [self getDealsWithParams:@{@"city":@"北京",
                                @"latitude":@(pos.latitude),
                                @"longitude":@(pos.longitude),

@@ -29,6 +29,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         //设置内部图片
+        
         [self setIcon:@"ic_district.png" selectedIcon:@"ic_district_hl.png"];
         
         //自动伸缩

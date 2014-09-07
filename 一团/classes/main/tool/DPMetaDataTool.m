@@ -161,7 +161,7 @@ singleton_implementation(DPMetaDataTool)
 - (void)setCurrentCity:(DPCity *)currentCity
 {
     _currentDistrict = KAllDistrict;
-    
+
     _currentCity = currentCity;
     
     //移除之前的城市名

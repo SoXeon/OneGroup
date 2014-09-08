@@ -28,6 +28,7 @@
 @end
 
 @implementation DPMetaDataTool
+
 singleton_implementation(DPMetaDataTool)
 
 - (id)init
@@ -95,21 +96,21 @@ singleton_implementation(DPMetaDataTool)
         _totalCities = [NSMutableDictionary dictionary];
         //存放所有的城市组
         NSMutableArray *tempSections = [NSMutableArray array];
-        //添加热门城市组
+        //1.添加热门城市组
         CitySection *hotSection = [[CitySection alloc]init];
         hotSection.name = @"热门城市";
         hotSection.cities = [NSMutableArray array];
         [tempSections addObject:hotSection];
     
         //添加a-z组
-        //加载plist数据
+        //2.加载plist数据
         NSArray *azArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"Cities.plist" ofType:nil]];
         for (NSDictionary *azDict in azArray) {
             //添加城市组
             CitySection *section = [[CitySection alloc]init];
             [section setValues:azDict];
             [tempSections addObject:section];
-            //遍历这组所有都城市
+            //遍历这组所有都城市，判断是否是热门城市
             for (DPCity *city in section.cities) {
                 if (city.hot) {
                     [hotSection.cities addObject:city];
@@ -118,13 +119,13 @@ singleton_implementation(DPMetaDataTool)
             }
         }
         
-        //从沙盒里面读取之前访问过的城市的名称
+        //3.从沙盒里面读取之前访问过的城市的名称
         _visitedCityNames = [NSKeyedUnarchiver unarchiveObjectWithFile:kFilePath];
         if (_visitedCityNames == nil) {
             _visitedCityNames = [NSMutableArray array];
         }
         
-        //添加最近访问城市组
+        //4.添加最近访问城市组
         CitySection *visitedSection = [[CitySection alloc]init];
         visitedSection.name = @"最近访问";
         visitedSection.cities = [NSMutableArray array];

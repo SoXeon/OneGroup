@@ -42,6 +42,7 @@
     //清除之间的搜索结果
     [_resultCities removeAllObjects];
     
+    
     //筛选城市
     HanyuPinyinOutputFormat *fmt = [[HanyuPinyinOutputFormat alloc]init];
     fmt.caseType = CaseTypeUppercase;
@@ -49,15 +50,17 @@
     fmt.vCharType = VCharTypeWithUUnicode;
     
     NSDictionary *cities = [DPMetaDataTool sharedDPMetaDataTool].totalCities;
+    //遍历所有字典
     [cities enumerateKeysAndObjectsUsingBlock:^(NSString *key, DPCity *obj, BOOL *stop) {
         
         //拼音
         NSString *pinyin = [PinyinHelper toHanyuPinyinStringWithNSString:obj.name withHanyuPinyinOutputFormat:fmt withNSString:@"#"];
         
-        //拼音首字母
+        //拼音首字母 以#作为分隔符
         NSArray *words = [pinyin componentsSeparatedByString:@"#"];
         NSMutableString *pinyinHeader = [NSMutableString string];
         for (NSString *word in words) {
+            //把城市拼音首字母拼接为一个字符串
             [pinyinHeader appendString:[word substringFromIndex:1]];
         }
         pinyin = [pinyin stringByReplacingOccurrencesOfString:@"#" withString:@""];

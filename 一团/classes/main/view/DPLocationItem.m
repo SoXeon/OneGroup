@@ -49,15 +49,15 @@
         [self addTarget:self action:@selector(locationClick) forControlEvents:UIControlEventTouchDown];
         
         //监听城市改变的通知
-        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(cityChange) name:kCityChangeNote object:nil];
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(cityChange:) name:kCityChangeNote object:nil];
 
     }
     return self;
 }
 
 
-
--(void)cityChange
+//之前没传通知
+-(void)cityChange:(NSNotification *)note
 {
     DPCity *city = [DPMetaDataTool sharedDPMetaDataTool].currentCity;
     

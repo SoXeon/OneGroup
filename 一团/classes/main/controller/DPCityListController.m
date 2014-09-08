@@ -96,6 +96,7 @@
             _searchResult.view.frame = _cover.frame;
             _searchResult.view.backgroundColor = [UIColor whiteColor];
             _searchResult.view.autoresizingMask = _cover.autoresizingMask;
+            //如果当前控制器的View在另外一个View上面，两者之间就是父子关系
             [self addChildViewController:_searchResult];
             }
         _searchResult.searchText = searchText;

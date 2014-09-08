@@ -16,6 +16,7 @@
     NSMutableArray *array = [NSMutableArray array];
     for (NSDictionary *dict in cities) {
         
+        //如果这个字典中是模型，那么久直接复制
         if ([dict isKindOfClass:[DPCity class]]) {
             _cities = cities;
             return;

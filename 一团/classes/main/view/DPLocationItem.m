@@ -96,7 +96,9 @@
     _popover.popoverContentSize = CGSizeMake(320, 480);
     _popover.delegate = self;
     [self showPopover];
-    //监听屏幕旋转的通知
+    
+    //监听屏幕旋转的通知,涉及到Popover旋转过程中箭头位置和自身位置的设置
+    //移除之前的旋转
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(screenRoate) name:UIDeviceOrientationDidChangeNotification object:nil];
 }
@@ -104,12 +106,15 @@
 - (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
 {
     self.enabled = YES;
-    //popover被销毁的时候，移除通知
+    
+    //popover被销毁的时候，移除通知，否则屏幕旋转的时候会出现Popver
     [[NSNotificationCenter defaultCenter]removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
+    
 }
 
 - (void)dealloc
 {
+    //通知使用完了要及时销毁
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 

@@ -10,7 +10,7 @@
 @class DPDock;
 
 @protocol DPDockDelegate <NSObject>
-
+@optional
 - (void)dock:(DPDock *)dock tabChangeFrom:(int)from to:(int)to;
 
 @end

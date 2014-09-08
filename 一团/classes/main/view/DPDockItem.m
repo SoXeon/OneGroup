@@ -29,15 +29,18 @@
     [super setFrame:frame];
 }
 
-#pragma mark 重写高亮状态
+#pragma mark 重写高亮状态,高亮状态下不做任何操作
 - (void)setHighlighted:(BOOL)highlighted { }
 
 #pragma mark 设置按钮内部图片
 -(void)setIcon:(NSString *)icon
 {
+    //这里是为了方便访问icon，否则会返回nil   -(NSString *)icon
     _icon = icon;
     [self setImage:[UIImage imageNamed:icon] forState:UIControlStateNormal];
 }
+
+
 
 - (void)setSelectedIcon:(NSString *)selectedIcon
 {

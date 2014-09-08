@@ -33,6 +33,8 @@
     //弹出更多控制器
     self.enabled = NO;
     DPMoreController *more = [[DPMoreController alloc]init];
+    
+    //moreItem 被当前控制器拥有
     more.moreItem = self;
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:more];
     nav.modalPresentationStyle = UIModalPresentationFormSheet;

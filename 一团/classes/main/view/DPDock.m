@@ -99,6 +99,7 @@
     [tab setIcon:icon selectedIcon:selectedIcon];
     tab.frame = CGRectMake(0, kDockItemH * index, 0, 0);
     [tab addTarget:self action:@selector(tabClick:) forControlEvents:UIControlEventTouchDown];
+    //绑定一个Tag，这样作为视图切换依据
     tab.tag = index - 1;
     [self addSubview:tab];
     

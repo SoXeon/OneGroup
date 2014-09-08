@@ -48,6 +48,8 @@
 {
     UISearchBar *search = [[UISearchBar alloc] init];
     search.delegate = self;
+    
+    //默认宽度是768或更高，设置自动伸缩才能显示正常
     search.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     search.frame = CGRectMake(0, 0, self.view.frame.size.width , kSearchH);
     search.placeholder = @"请输入城市名称或拼音";
@@ -82,7 +84,7 @@
 
 
 #pragma mark 搜索框的代理方法
-#pragma mark 监听搜索框内文字的改变
+#pragma mark 监听搜索框内文字的改变，实时刷新搜索
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
     if (searchText.length == 0) {
@@ -112,17 +114,22 @@
         _cover = [[UIView alloc] init];
         _cover.backgroundColor = [UIColor blackColor];
         _cover.autoresizingMask = _tableView.autoresizingMask;
+        
+        //监听手势，点击蒙板，蒙板消失
         [_cover addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(coverClick)]];
     }
     _cover.frame = _tableView.frame;
     [self.view addSubview:_cover];
     _cover.alpha = 0.0;
+    
+    //蒙板饱和度动画变化过程
     [UIView animateWithDuration:0.3 animations:^{
         _cover.alpha = 0.7;
     }];
 }
 
 #pragma mark 监听点击搜索框取消按钮
+#pragma mark 另外两种显示取消的状态
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
 {
     [self coverClick];
@@ -181,8 +188,10 @@
     return s.name;
 }
 
+//返回索引
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
+    //取出_citiesSections中所有元素name的值,并且装入数组中返回
     return [_citiesSections valueForKeyPath:@"name"];
 }
 

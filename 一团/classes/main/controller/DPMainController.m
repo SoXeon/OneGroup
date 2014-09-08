@@ -8,11 +8,13 @@
 
 #import "DPMainController.h"
 #import "DPDock.h"
+#import "DPNavigationController.h"
+
 #import "DPDealListController.h"
 #import "DPCollectViewController.h"
 #import "DPMapViewController.h"
 #import "DPMineViewController.h"
-#import "DPNavigationController.h"
+
 
 @interface DPMainController () <DPDockDelegate>
 {
@@ -33,7 +35,8 @@
     dock.delegate = self;
     [self.view addSubview:dock];
     
-    //添加内容View
+    //添加内容View，这里是为了适配屏幕在旋转过程中内容的大小，width永远是最小值，height永远是最大值
+    //设定为自动伸缩以后，这里就很方便的适配屏幕了
     _contentView = [[UIView alloc]init];
     [self.view  addSubview:_contentView];
     CGFloat w = self.view.frame.size.width - kDockItemW;
@@ -81,8 +84,11 @@
     
     //添加新控制器
      UIViewController *new = self.childViewControllers[to];
+    
     _contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     new.view.frame = _contentView.bounds;
+    
+    //加入contentView就不用担心 x,y值，contentView设置了自动伸缩
     [_contentView addSubview:new.view];
 }
 

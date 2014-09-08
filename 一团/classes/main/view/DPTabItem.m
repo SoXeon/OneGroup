@@ -22,6 +22,7 @@
 
 - (void)setEnabled:(BOOL)enabled
 {
+    //控制顶部分割线要不要显示
     _divider.hidden = !enabled;
     
     [super setEnabled:enabled];

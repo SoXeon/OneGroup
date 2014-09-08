@@ -10,6 +10,7 @@
 #import "DPCity.h"
 #import "NSObject+Value.h"
 @implementation CitySection
+
 -(void)setCities:(NSMutableArray *)cities
 {
     NSMutableArray *array = [NSMutableArray array];
@@ -28,4 +29,5 @@
     }
     _cities = array;
 }
+
 @end

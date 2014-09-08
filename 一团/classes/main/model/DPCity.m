@@ -11,6 +11,7 @@
 #import "NSObject+Value.h"
 
 @implementation DPCity
+
 -(void)setDistricts:(NSArray *)districts
 {
     NSMutableArray *array = [NSMutableArray array];

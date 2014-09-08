@@ -36,7 +36,9 @@
 
 - (void)done
 {
+    //控制器的消失
     [self dismissViewControllerAnimated:YES completion:^{
+        //同时设置moreButton可以点击
         _moreItem.enabled = YES;
     }];
 }

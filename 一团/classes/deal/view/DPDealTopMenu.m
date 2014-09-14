@@ -48,7 +48,7 @@
         //3.默认排序
         _oItem = [self addMenuItem:@"默认排序" index:2];
         
-        //监听通知
+        //监听通知,这里监听通知的地方不是跳到下面的DataChange，存在BUG
         kAddAllNotes(dataChange)
     }
     return self;

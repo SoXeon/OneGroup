@@ -180,7 +180,7 @@ singleton_implementation(DPMetaDataTool)
     //发出通知
     [[NSNotificationCenter defaultCenter] postNotificationName:kCityChangeNote object:nil];
     
-    //添加最近访问城市
+    //添加最近访问城市,如果没有最近访问的城市，就不要最近访问城市
     if (![_totalCitySections containsObject:_visitedSection]) {
         NSMutableArray * allSections = (NSMutableArray *)_totalCitySections;
         [allSections insertObject:_visitedSection atIndex:0];

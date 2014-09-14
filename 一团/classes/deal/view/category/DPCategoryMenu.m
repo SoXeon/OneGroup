@@ -41,6 +41,7 @@
                 _selectedItem = item;
             }
         }
+        //设置水平滚动，垂直方向为0，则不能滚动
         _scrollView.contentSize = CGSizeMake(count * kBottomMenuItemW, 0);
     }
     return self;

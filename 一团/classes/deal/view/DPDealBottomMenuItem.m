@@ -32,6 +32,7 @@
     return self;
 }
 
+//限制所有Item的宽高
 - (void)setFrame:(CGRect)frame
 {
     frame.size = CGSizeMake(kBottomMenuItemW, kBottomMenuItemH);

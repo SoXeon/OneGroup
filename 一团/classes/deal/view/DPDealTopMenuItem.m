@@ -22,7 +22,7 @@
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         self.titleLabel.font = [UIFont systemFontOfSize:15];
         
-        //设置箭头
+        //设置箭头，设置居中缩小
         [self setImage:[UIImage imageNamed:@"ic_arrow_down.png"] forState:UIControlStateNormal];
         self.imageView.contentMode = UIViewContentModeCenter;
         

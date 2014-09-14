@@ -42,7 +42,6 @@
     //清除之间的搜索结果
     [_resultCities removeAllObjects];
     
-    
     //筛选城市
     HanyuPinyinOutputFormat *fmt = [[HanyuPinyinOutputFormat alloc]init];
     fmt.caseType = CaseTypeUppercase;
@@ -63,6 +62,8 @@
             //把城市拼音首字母拼接为一个字符串
             [pinyinHeader appendString:[word substringFromIndex:1]];
         }
+        
+        //去除#号后，重新复制  
         pinyin = [pinyin stringByReplacingOccurrencesOfString:@"#" withString:@""];
         
         //搜索条件

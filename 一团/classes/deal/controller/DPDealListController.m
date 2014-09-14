@@ -124,7 +124,7 @@
     s.placeholder = @"请输入商品名、地址等";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:s];
     
-    //左边的菜单栏
+    //左边的顶部菜单栏
     DPDealTopMenu *top = [[DPDealTopMenu alloc] init];
     top.contentView = self.view;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:top];

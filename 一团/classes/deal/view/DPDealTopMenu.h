@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface DPDealTopMenu : UIView
+
 //容纳底部菜单
 @property (nonatomic,weak)UIView *contentView;
+
 @end

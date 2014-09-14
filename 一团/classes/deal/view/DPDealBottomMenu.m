@@ -131,7 +131,7 @@
     [UIView commitAnimations];
 }
 
-#pragma mark 显示
+#pragma mark 显示动画效果
 - (void)show
 {
     _contentView.transform = CGAffineTransformMakeTranslation(0, -_contentView.frame.size.height);

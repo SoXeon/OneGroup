@@ -18,10 +18,11 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        //文字
+        
+        //文字居中
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         
-        //图片
+        //图片居中
         self.imageView.contentMode = UIViewContentModeCenter;
     }
     return self;

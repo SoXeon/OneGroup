@@ -55,7 +55,7 @@
         scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         scrollView.frame = CGRectMake(0, 0, self.frame.size.width, kBottomMenuItemH);
         scrollView.backgroundColor =[UIColor whiteColor];
-        [self addSubview:scrollView];
+        [_contentView addSubview:scrollView];
         _scrollView = scrollView;
     }
     return self;
@@ -82,7 +82,7 @@
 {
     [_subtitlesView hide];
     
-    //调整整个内容view的frame
+    //调整整个内容view的frame为Scroll的高度
     CGRect f = _contentView.frame;
     f.size.height = kBottomMenuItemH;
     _contentView.frame = f;
@@ -101,6 +101,7 @@
 #pragma mark 显示子标题
 - (void)showSubitlesView:(DPDealBottomMenuItem *)item
 {
+    //只有在主动调用设置标题时候才调用动画效果
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDelay:kDefaultAnimDuration];
     
@@ -120,7 +121,7 @@
     if (_subtitlesView.superview == nil) { // 没有父控件
         [_subtitlesView show];
     }
-    //添加子标题需要显示的内容scrollView底部
+    //插入子标题需要显示的内容scrollView底部
     [_contentView insertSubview:_subtitlesView belowSubview:_scrollView];
     
     //调整整个内容view的frame

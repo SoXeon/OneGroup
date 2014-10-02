@@ -49,15 +49,17 @@
         _oItem = [self addMenuItem:@"默认排序" index:2];
         
         //监听通知,这里监听通知的地方不是跳到下面的DataChange，存在BUG
-        kAddAllNotes(dataChange)
+        kAddAllNotes(dataChangeNow)
     }
     return self;
 }
 
-- (void)dataChange
+- (void)dataChangeNow
 {
     _selectedItem.selected = NO;
     _selectedItem = nil;
+    
+    //要判断是否为空
     
     //1.分类按钮
     NSString *c = [DPMetaDataTool sharedDPMetaDataTool].currentCategory;

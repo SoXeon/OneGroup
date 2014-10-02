@@ -117,7 +117,7 @@ singleton_implementation(DPDealTool)
 {
     
     
-    [self getDealsWithParams:@{@"city":@"北京",
+    [self getDealsWithParams:@{@"city":@"上海",
                                @"latitude":@(pos.latitude),
                                @"longitude":@(pos.longitude),
                                @"radius":@5000 }success:success error:error];

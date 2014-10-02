@@ -28,7 +28,7 @@
 #define kItemH 250
 
 
-@interface DPDealListController () <DPRequestDelegate,MJRefreshBaseViewDelegate>
+@interface DPDealListController () <MJRefreshBaseViewDelegate>
 {
     NSMutableArray *_deals;
     int _page;//页码
@@ -56,7 +56,7 @@
     //添加刷新控件
     [self addRefresh];
     
-    [DPMetaDataTool sharedDPMetaDataTool].currentCity = [DPMetaDataTool sharedDPMetaDataTool].totalCities[@"北京"];
+    [DPMetaDataTool sharedDPMetaDataTool].currentCity = [DPMetaDataTool sharedDPMetaDataTool].totalCities[@"上海"];
     
 }
 

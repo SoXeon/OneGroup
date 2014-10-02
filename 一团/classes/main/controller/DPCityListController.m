@@ -119,6 +119,8 @@
         //监听手势，点击蒙板，蒙板消失
         [_cover addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(coverClick)]];
     }
+    
+    //蒙板frame永远都是和tableView的高度是一致的
     _cover.frame = _tableView.frame;
     [self.view addSubview:_cover];
     _cover.alpha = 0.0;

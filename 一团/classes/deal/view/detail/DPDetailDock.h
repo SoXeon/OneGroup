@@ -10,7 +10,6 @@
 
 @class DPDetailDockItem,DPDetailDock;
 
-
 //协议
 @protocol DPDetailDockDelegate <NSObject>
 
@@ -20,12 +19,13 @@
 @end
 //DPDetailDock
 @interface DPDetailDock : UIView
-- (IBAction)btnClick:(UIButton *)sender;
-+(id)detailDock;
 @property (weak, nonatomic) IBOutlet DPDetailDockItem *infoBtn;
 @property (weak, nonatomic) IBOutlet DPDetailDockItem *merchantBtn;
 
 @property (nonatomic,weak) id<DPDetailDockDelegate> delegate;
+
+- (IBAction)btnClick:(UIButton *)sender;
++(id)detailDock;
 
 @end
 

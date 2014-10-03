@@ -80,6 +80,7 @@ singleton_implementation(DPDealTool)
 
 - (void)dealsWithPage:(int)page success:(DealsSuccessBlock)success error:(DealsErrorBlock)error
 {
+    //设置一次性加载多少条数据
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObject:@(15) forKey:@"limit"];
     
     //添加城市参数
@@ -141,7 +142,6 @@ singleton_implementation(DPDealTool)
         block(result,nil);
     }
 }
-
 
 - (void)request:(DPRequest *)request didFailWithError:(NSError *)error
 {

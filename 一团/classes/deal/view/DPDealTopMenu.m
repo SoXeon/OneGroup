@@ -104,6 +104,7 @@
 #pragma mark 监听顶部item的点击
 - (void)itemClick:(DPDealTopMenuItem *)item
 {
+    //没有选择城市就不允许点击顶部菜单
     if ([DPMetaDataTool sharedDPMetaDataTool].currentCity == nil) {
         return;
     }

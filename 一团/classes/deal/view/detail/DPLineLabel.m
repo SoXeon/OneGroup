@@ -23,7 +23,8 @@
     //画笔
     CGFloat y = rect.size.height * 0.5;
     CGContextMoveToPoint(ctx, 0, y);
-    CGContextAddLineToPoint(ctx,rect.size.width, y);
+    CGFloat endX = [self.text sizeWithFont:self.font].width;
+    CGContextAddLineToPoint(ctx, endX, y);
     
     //渲染
     CGContextStrokePath(ctx);

@@ -85,7 +85,7 @@
     DPDetailDock *dock = [DPDetailDock detailDock];
     CGSize size = dock.frame.size;
     CGFloat x = self.view.frame.size.width - size.width;
-    CGFloat y = self.view.frame.size.height - size.height - 300;
+    CGFloat y = self.view.frame.size.height - size.height - 100;
     dock.frame = CGRectMake( x, y, 0, 0);
     dock.delegate = self;
     [self.view addSubview:dock];

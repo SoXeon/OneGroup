@@ -41,7 +41,7 @@
     detail.deal = deal;
     DPNavigationController *nav = [[DPNavigationController alloc]initWithRootViewController:detail];
     nav.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleLeftMargin;
-    MyLog(@"%f",_cover.frame.size.width);
+   // MyLog(@"%f",_cover.frame.size.width);
     nav.view.frame = CGRectMake(_cover.frame.size.width , 0, 600, _cover.frame.size.height);
     //两个控制器为互为父子关系，view也是一样的
     [self.navigationController.view addSubview:nav.view];

@@ -113,8 +113,10 @@
     
     //设置子标题的frame
     _subtitlesView.frame = CGRectMake(0, kBottomMenuItemH, self.frame.size.width, _subtitlesView.frame.size.height);
+    
     //设置子标题的主标题
     _subtitlesView.mainTitle = [item titleForState:UIControlStateNormal];
+    
     //设置子标题显示内容
     _subtitlesView.titles = item.titles;
 

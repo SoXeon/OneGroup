@@ -96,6 +96,8 @@
     }
     
     [[DPDealTool sharedDPDealTool] dealsWithPage:_page success:^(NSArray *deals, int totalCount) {
+        
+        //数据加载完毕以后，才清空，重新加载新数据
         if (isHeader) {
             _deals = [NSMutableArray array];
         }

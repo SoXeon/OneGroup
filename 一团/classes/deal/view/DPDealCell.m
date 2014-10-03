@@ -16,7 +16,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.selected = YES;
+
     }
     return self;
 }
@@ -42,6 +42,7 @@
     fmt.dateFormat = @"yyyy-MM-dd";
     NSString *now = [fmt stringFromDate:[NSDate date]];
     
+#warning 最新发布这里没法显示，存在BUG，但是即将结束可以显示
     //比较当前时间和取消时间
     NSString *icon = nil;
     if ([deal.publish_date isEqualToString:now]) {
@@ -51,12 +52,10 @@
     } else if ([deal.purchase_deadline compare:now] == NSOrderedAscending){
       icon = @"ic_deal_over.png";
     }
-    if (icon) {
-        _bage.hidden = NO;
-        _bage.image = [UIImage imageNamed:icon];
-    } else{
-        _bage.hidden = YES;
-    }
+    
+    _bage.hidden = icon == nil;
+    _bage.image = [UIImage imageNamed:icon];
+
 }
 
 @end

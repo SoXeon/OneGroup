@@ -40,12 +40,13 @@
 
     self.collectionView.backgroundColor = kGlobalBg;
     
-    //设置collectionView永远支持垂直滚动
+    //设置collectionView永远支持垂直滚动，CollectionView特有属性
     self.collectionView.alwaysBounceVertical = YES;
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     //默认计算layout
     [self didRotateFromInterfaceOrientation:0];
 }
@@ -65,9 +66,12 @@
     CGFloat v = 20;
     CGFloat h = 0;
     
+    //横竖屏状态下，保持每个cell 之间的间距相同
     if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation)) {
+        //横屏
         h = (self.view.frame.size.width - 3 * kItemW) / 4;
     } else {
+        //竖屏
         h = (self.view.frame.size.width - 2 * kItemW) / 3;
     }
     [UIView animateWithDuration:1.0 animations:^{
@@ -81,13 +85,13 @@
     [self showDetail:self.totalDeals[indexPath.row]];
 }
 
-
-
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return self.totalDeals.count;
 }
 
+
+#warning 这里有时候会有bug Unknown class DPViewController in Interface Builder file.
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *ID = @"deal";

@@ -51,6 +51,7 @@
     if ([_delegate respondsToSelector:@selector(subtitlesView:titleClick:)]) {
         NSString *title = [btn titleForState:UIControlStateNormal];
         
+        //如果是子菜单的全部时
         if ([title isEqualToString:kAll]) {
             title = _mainTitle;
         }
@@ -61,6 +62,7 @@
 
 - (void)setTitles:(NSArray *)titles
 {
+    //在所有选项文字前，添加全部选项
     NSMutableArray *array = [NSMutableArray array];
     [array addObject:kAll];
     [array addObjectsFromArray:titles];
@@ -89,6 +91,7 @@
         //3.根据按钮文字来设定是否被选中
         if ([_delegate respondsToSelector:@selector(subtitlesViewGetCurrentTitle:)]) {
             NSString *current =  [_delegate subtitlesViewGetCurrentTitle:self];
+            
             //选中了主标题,选中全部按钮
             if ([current isEqualToString:_mainTitle] && i == 0 ) {
                 btn.selected = YES;

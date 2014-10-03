@@ -17,9 +17,20 @@
 
 @implementation DPDetailDock
 
+-(void)setFrame:(CGRect)frame
+{
+    frame.size = self.frame.size;
+    [super setFrame:frame];
+}
+
 +(id)detailDock
 {
     return [[NSBundle mainBundle]loadNibNamed:@"DPDetailDock" owner:nil options:nil][0];
+}
+
+-(void)awakeFromNib
+{
+    [self btnClick:_infoBtn];
 }
 
 - (IBAction)btnClick:(UIButton *)sender {
@@ -41,17 +52,6 @@
     [self bringSubviewToFront:sender];
 }
 
--(void)awakeFromNib
-{
-    [self btnClick:_infoBtn];
-}
-
-
--(void)setFrame:(CGRect)frame
-{
-    frame.size = self.frame.size;
-    [super setFrame:frame];
-}
 @end
 
 

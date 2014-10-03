@@ -23,8 +23,6 @@
 @end
 
 
-#warning 这里存在BUG ，显示ScrollView的时候无法做到从头显示
-
 @implementation DPDistrictMenu
 
 - (id)initWithFrame:(CGRect)frame

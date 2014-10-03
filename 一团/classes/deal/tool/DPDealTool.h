@@ -12,6 +12,7 @@
 
 @class DPDeal;
 
+//装的都是模型数据
 typedef void (^DealsSuccessBlock)(NSArray *deals,int totalCount);
 typedef void (^DealsErrorBlock)(NSError *error);
 

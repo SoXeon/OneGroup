@@ -55,8 +55,8 @@
     
     //添加刷新控件
     [self addRefresh];
-    
-    [DPMetaDataTool sharedDPMetaDataTool].currentCity = [DPMetaDataTool sharedDPMetaDataTool].totalCities[@"上海"];
+//    
+//    [DPMetaDataTool sharedDPMetaDataTool].currentCity = [DPMetaDataTool sharedDPMetaDataTool].totalCities[@"上海"];
     
 }
 

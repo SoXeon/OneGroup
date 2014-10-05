@@ -135,6 +135,10 @@ singleton_implementation(DPMetaDataTool)
             DPCity *city = _totalCities[name];
             [visitedSection.cities addObject:city];
         }
+    
+    if (_visitedCityNames.count) {
+        [tempSections insertObject:visitedSection atIndex:0];
+    }
         _totalCitySections = tempSections;
     }
 
@@ -161,9 +165,9 @@ singleton_implementation(DPMetaDataTool)
 
 - (void)setCurrentCity:(DPCity *)currentCity
 {
-    _currentDistrict = KAllDistrict;
-
     _currentCity = currentCity;
+    
+    _currentDistrict = KAllDistrict;
     
     //移除之前的城市名
     [_visitedCityNames removeObject:currentCity.name];

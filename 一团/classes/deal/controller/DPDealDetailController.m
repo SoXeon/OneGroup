@@ -39,6 +39,8 @@
     
     [self addAllChildControllers];
     
+    
+    
 }
 
 #pragma mark 初始化自控制器
@@ -119,21 +121,33 @@
     [UIBarButtonItem itemWithIcon:@"btn_share.png" highlightedIcon:@"btn_share_pressed.png" target:nil action:nil],
     [UIBarButtonItem itemWithIcon:collectIcon highlightedIcon:@"ic_deal_collect_pressed.png" target:self action:@selector(collect)]];
     
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(collectChange) name:kCollectChangeNote object:nil];
+    
 }
 
 -(void)collect
 {
-    //设置收藏选中颜色
-    UIButton *btn = (UIButton *)[self.navigationItem.rightBarButtonItems[1] customView];
+    
     if (_deal.collected) {
         [[DPCollectTool sharedDPCollectTool] uncollectDeal:_deal];
-        [btn setBackgroundImage:[UIImage imageNamed:@"ic_deal_collect.png"] forState:UIControlStateNormal];
     } else {
         [[DPCollectTool sharedDPCollectTool] collectDeal:_deal];
-        [btn setBackgroundImage:[UIImage imageNamed:@"ic_collect_suc.png"] forState:UIControlStateNormal];
     }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kCollectChangeNote object:nil];
+}
+
+- (void)collectChange
+{
+    //设置收藏选中颜色
+    [[DPCollectTool sharedDPCollectTool] handleDeal:_deal];
+    
+    UIButton *btn = (UIButton *)[self.navigationItem.rightBarButtonItems[1] customView];
+    if (_deal.collected) {
+        [btn setBackgroundImage:[UIImage imageNamed:@"ic_collect_suc.png"] forState:UIControlStateNormal];
+    } else {
+        [btn setBackgroundImage:[UIImage imageNamed:@"ic_deal_collect.png"] forState:UIControlStateNormal];
+    }
 }
 
 

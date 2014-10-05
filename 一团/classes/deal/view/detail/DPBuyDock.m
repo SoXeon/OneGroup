@@ -20,9 +20,10 @@
     _currentPrice.text = deal.current_price_text;
 }
 
-- (IBAction)buy {
+- (void)buy {
     NSString *ID = [_deal.deal_id substringFromIndex:[_deal.deal_id rangeOfString:@"-"].location +1];
-    NSString *url = [NSString stringWithFormat:@"http://o.p.dianping.com/buy/d%@",ID];
+    
+    NSString *url = [NSString stringWithFormat:@"http://o.p.dianping.com/order/d%@",ID];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
 }
 

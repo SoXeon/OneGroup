@@ -102,7 +102,19 @@ singleton_implementation(DPDealTool)
     //添加排序参数
     DPOrder *order = [DPMetaDataTool sharedDPMetaDataTool].currentOrder;
     if (order) {
-        [params setObject:@(order.index) forKey:@"sort"];
+        //按照距离最近排序
+        if (order.index == 7) {
+            DPCity *city = [DPLocationTool sharedDPLocationTool].locationCity;
+            if (city) {
+                [params setObject:@(order.index) forKey:@"sort"];
+                
+                //增肌经纬度参数
+                [params setObject:@(city.position.latitude) forKey:@"latitude"];
+                [params setObject:@(city.position.longitude) forKey:@"longitude"];
+            }
+        } else {
+            [params setObject:@(order.index) forKey:@"sort"];
+        }
     }
     
     //添加页码参数
@@ -116,9 +128,13 @@ singleton_implementation(DPDealTool)
 #pragma mark 获取周边团购
 -(void)dealsWithPos:(CLLocationCoordinate2D)pos success:(DealsSuccessBlock)success error:(DealsErrorBlock)error
 {
+   DPCity *localCity = [DPLocationTool sharedDPLocationTool].locationCity;
     
+    if (localCity == nil) {
+        return;
+    }
     
-    [self getDealsWithParams:@{@"city":@"上海",
+    [self getDealsWithParams:@{@"city": localCity.name,
                                @"latitude":@(pos.latitude),
                                @"longitude":@(pos.longitude),
                                @"radius":@5000 }success:success error:error];

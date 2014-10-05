@@ -12,7 +12,7 @@
 @property (weak, nonatomic) IBOutlet DPLineLabel *listPrice;
 @property (weak, nonatomic) IBOutlet UILabel *currentPrice;
 @property (nonatomic,strong) DPDeal *deal;
-- (IBAction)buy;
+- (void)buy;
 
 +(id)buyDock;
 @end

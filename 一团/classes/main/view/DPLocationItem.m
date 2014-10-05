@@ -10,7 +10,7 @@
 #import "DPCityListController.h"
 #import "DPCity.h"
 #import "DPMetaDataTool.h"
-#import "DPLocationItem.h"
+#import "DPLocationTool.h"
 
 #define kImageScale 0.5
 
@@ -27,10 +27,7 @@
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {
-        //设置内部图片
-        
-        [self setIcon:@"ic_district.png" selectedIcon:@"ic_district_hl.png"];
+    if (self) {        
         
         //自动伸缩
         self.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
@@ -50,9 +47,26 @@
         
         //监听城市改变的通知
         [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(cityChange:) name:kCityChangeNote object:nil];
+        
+        //加载城市信息
+        [self loadCityData];
 
     }
     return self;
+}
+
+- (void)loadCityData
+{
+    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    indicator.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+    CGFloat x = kDockItemW * 0.5;
+    CGFloat y = 20;
+    indicator.center = CGPointMake(x, y);
+    [self addSubview:indicator];
+    [indicator startAnimating];
+    _indicator = indicator;
+    
+    [DPLocationTool sharedDPLocationTool];
 }
 
 
@@ -69,6 +83,14 @@
     
     //变成enable
     self.enabled = YES;
+    
+    //移除菊花
+    [_indicator removeFromSuperview];
+    _indicator = nil;
+    
+    //设置图标
+    [self setIcon:@"ic_district.png" selectedIcon:@"ic_district_hl.png"];
+
 }
 
 - (void)screenRoate

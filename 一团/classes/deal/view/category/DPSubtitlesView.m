@@ -13,6 +13,26 @@
 #define kTitleW 100
 #define kTitleH 40
 
+
+@interface SubtitleBtn : UIButton
+@end
+
+@implementation SubtitleBtn
+
+- (void)drawRect:(CGRect)rect
+{
+    if (self.selected) {
+        CGRect frame = self.titleLabel.frame;
+        frame.origin.x -= 5;
+        frame.size.width += 10;
+        frame.origin.y -= 5;
+        frame.size.height += 10;
+        [[UIImage resizedImage:@"slider_filter_bg_active.png"]drawInRect:frame];
+    }
+}
+
+@end
+
 @interface DPSubtitlesView()
 {
     UIButton *_selectedBtn;
@@ -74,10 +94,10 @@
         // 1.取出i位置对应的按钮
         UIButton *btn = nil;
         if (i >= self.subviews.count) { // 按钮个数不够重新创建
-            btn = [UIButton buttonWithType:UIButtonTypeCustom];
+            btn = [SubtitleBtn buttonWithType:UIButtonTypeCustom];
             [btn addTarget:self action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
             [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            [btn setBackgroundImage:[UIImage resizedImage:@"slider_filter_bg_active.png"] forState:UIControlStateSelected];
+            //[btn setBackgroundImage:[UIImage resizedImage:@"slider_filter_bg_active.png"] forState:UIControlStateSelected];
             [self addSubview:btn];
         } else {//够的话，直接替换字符
             btn = self.subviews[i];

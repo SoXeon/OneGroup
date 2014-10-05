@@ -77,8 +77,10 @@
         return;
     }
     
+    //位置
     CLLocationCoordinate2D center = userLocation.location.coordinate;
     
+    //范围
     MKCoordinateRegion region = MKCoordinateRegionMake(center, kSpan);
     [mapView setRegion:region animated:YES];
     _mapView = mapView;
@@ -90,8 +92,11 @@
     //地图当前展示区域的中心位置
     CLLocationCoordinate2D pos = mapView.region.center;
     
+    //获取周边团购信息
     [[DPDealTool sharedDPDealTool] dealsWithPos:pos success:^(NSArray *deals, int totalCount) {
         for (DPDeal *d in deals) {
+            
+            //判断是否曾经显示过，如果有则不显示，无则添加
             if ([_showingDeals containsObject:d]) {
                 continue;
             }
@@ -110,6 +115,7 @@
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(DPDealPosAnnotation *)annotation
 {
+    //过滤大头针
     if (![annotation isKindOfClass:[DPDealPosAnnotation class]]) {
         return nil;
     }

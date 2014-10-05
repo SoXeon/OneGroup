@@ -16,7 +16,6 @@
 @implementation DPMineViewController
 
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -28,9 +27,9 @@
 
 -(void)logout
 {
-    [[DPDealTool sharedDPDealTool] dealsWithPage:1 success:^(NSArray *deals, int totalCount) {
-        [self showDetail:deals[0]];
-    } error:nil];
+//    [[DPDealTool sharedDPDealTool] dealsWithPage:1 success:^(NSArray *deals, int totalCount) {
+//        [self showDetail:deals[0]];
+//    } error:nil];
 }
 
 @end

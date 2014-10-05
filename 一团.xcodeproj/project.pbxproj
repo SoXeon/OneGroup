@@ -498,7 +498,7 @@
 		E2497A0019244922005D964E /* DPDealTopMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPDealTopMenuItem.m; sourceTree = "<group>"; };
 		E2497A0219245C7A005D964E /* DPDealBottomMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPDealBottomMenu.h; sourceTree = "<group>"; };
 		E2497A0319245C7A005D964E /* DPDealBottomMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPDealBottomMenu.m; sourceTree = "<group>"; };
-		E2497A0919245EBC005D964E /* DPCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DPCategory.h; path = ../../model/DPCategory.h; sourceTree = "<group>"; };
+		E2497A0919245EBC005D964E /* DPCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPCategory.h; sourceTree = "<group>"; };
 		E2497A0A19245EBC005D964E /* DPCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPCategory.m; sourceTree = "<group>"; };
 		E2497A10192462A2005D964E /* DPCategoryMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPCategoryMenu.h; sourceTree = "<group>"; };
 		E2497A11192462A2005D964E /* DPCategoryMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPCategoryMenu.m; sourceTree = "<group>"; };
@@ -1235,6 +1235,7 @@
 			children = (
 				E235BB1019285DBE00A3F4F6 /* DPDeal.h */,
 				E235BB1119285DBE00A3F4F6 /* DPDeal.m */,
+				E2497A0919245EBC005D964E /* DPCategory.h */,
 				E2497A0A19245EBC005D964E /* DPCategory.m */,
 				E2497A2919249EBD005D964E /* DPOrder.h */,
 				E2497A2A19249EBD005D964E /* DPOrder.m */,
@@ -1548,7 +1549,6 @@
 		E2EB80DE192E236600133BC2 /* detail */ = {
 			isa = PBXGroup;
 			children = (
-				E2497A0919245EBC005D964E /* DPCategory.h */,
 				E2EB80DF192E238C00133BC2 /* DPBuyDock.xib */,
 				E2EB80E1192E25BA00133BC2 /* DPBuyDock.h */,
 				E2EB80E2192E25BA00133BC2 /* DPBuyDock.m */,

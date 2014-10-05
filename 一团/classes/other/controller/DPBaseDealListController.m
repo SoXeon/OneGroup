@@ -15,12 +15,11 @@
 
 @interface DPBaseDealListController () <UICollectionViewDataSource,UICollectionViewDelegate>
 
-
 @property (nonatomic,strong) UICollectionView *collectionView;
+
 @end
 
 @implementation DPBaseDealListController
-
 
 -(void)viewDidLoad
 {

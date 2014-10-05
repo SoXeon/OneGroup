@@ -114,7 +114,7 @@
 #pragma mark 添加scrollView
 -(void)addScrollView
 {
-    //添加滚动视图
+    //添加滚动视图，使得视图下移
     UIScrollView *scrollView = [[UIScrollView alloc]init];
     scrollView.bounds = CGRectMake(0, 0, 620, self.view.frame.size.height);
     scrollView.showsVerticalScrollIndicator = NO;

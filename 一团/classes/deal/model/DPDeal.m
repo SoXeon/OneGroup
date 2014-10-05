@@ -57,17 +57,17 @@
     [aCoder encodeInt:_purchase_count forKey:@"_purchase_count"];
 }
 
--(id)initWithCoder:(NSCoder *)aDecoder
+-(id)initWithCoder:(NSCoder *)decoder
 {
     if (self = [super init]) {
-        self.title = [aDecoder decodeObjectForKey:@"_title"];
-        self.list_price = [aDecoder decodeDoubleForKey:@"_list_price"];
-        self.purchase_deadline = [aDecoder decodeObjectForKey:@"_purchase_deadline"];
-        self.deal_id = [aDecoder decodeObjectForKey:@"_deal_id"];
-        self.image_url = [aDecoder decodeObjectForKey:@"_image_url"];
-        self.desc = [aDecoder decodeObjectForKey:@"_desc"];
-        self.current_price = [aDecoder decodeDoubleForKey:@"_current_price"];
-        self.purchase_count = [aDecoder decodeIntForKey:@"_purchase_count"];
+        self.title = [decoder decodeObjectForKey:@"_title"];
+        self.list_price = [decoder decodeDoubleForKey:@"_list_price"];
+        self.purchase_deadline = [decoder decodeObjectForKey:@"_purchase_deadline"];
+        self.deal_id = [decoder decodeObjectForKey:@"_deal_id"];
+        self.image_url = [decoder decodeObjectForKey:@"_image_url"];
+        self.desc = [decoder decodeObjectForKey:@"_desc"];
+        self.current_price = [decoder decodeDoubleForKey:@"_current_price"];
+        self.purchase_count = [decoder decodeIntForKey:@"_purchase_count"];
 
     }
     return self;

@@ -32,9 +32,6 @@
 {
     [super viewDidLoad];
     
-    
-    //[_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_deal.deal_h5_url]]];
-    
     NSString *ID = [_deal.deal_id substringFromIndex:[_deal.deal_id rangeOfString:@"-"].location + 1];
     NSString *url = [NSString stringWithFormat:@"http://m.dianping.com/tuan/deal/moreinfo/%@",ID];
 
@@ -49,7 +46,7 @@
 //    _cover.backgroundColor = kGlobalBg;
 //    _cover.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 //    [webView addSubview:_cover];
-//    
+//
 //    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 //    indicator.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin |
 //    UIViewAutoresizingFlexibleTopMargin;

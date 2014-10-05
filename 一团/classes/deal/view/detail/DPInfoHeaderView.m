@@ -18,6 +18,7 @@
 {
     _deal = deal;
     
+    //区分完整数据与不完整数据，刷新不同区域
     if (deal.restrictions) {
         //设置支持退款
         _anyTimeBack.enabled = deal.restrictions.is_refundable;
@@ -60,23 +61,15 @@
     _desc.frame = descF;
 
     //设置整体的高度
-    CGRect selfF = self.bounds;
+    CGRect selfF = self.frame;
     selfF.size.height += descDeltaH;
-    self.bounds = selfF;
+    self.frame = selfF;
     
-}
-
-
--(void)setFrame:(CGRect)frame
-{
-    frame.size.height = self.frame.size.height;
-    [super setFrame:frame];
 }
 
 +(id)infoHeaderView
 {
     return [[NSBundle mainBundle] loadNibNamed:@"DPInfoHeaderView" owner:nil options:nil][0];
 }
-
 
 @end

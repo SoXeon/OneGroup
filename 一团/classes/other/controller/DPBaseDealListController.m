@@ -10,7 +10,6 @@
 #import "DPDeal.h"
 #import "DPDealCell.h"
 
-
 #define kItemW 250
 #define kItemH 250
 

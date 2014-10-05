@@ -123,6 +123,7 @@
 
 -(void)collect
 {
+    //设置收藏选中颜色
     UIButton *btn = (UIButton *)[self.navigationItem.rightBarButtonItems[1] customView];
     if (_deal.collected) {
         [[DPCollectTool sharedDPCollectTool] uncollectDeal:_deal];
@@ -131,6 +132,8 @@
         [[DPCollectTool sharedDPCollectTool] collectDeal:_deal];
         [btn setBackgroundImage:[UIImage imageNamed:@"ic_collect_suc.png"] forState:UIControlStateNormal];
     }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kCollectChangeNote object:nil];
 }
 
 

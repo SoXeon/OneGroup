@@ -24,6 +24,7 @@ singleton_implementation(DPCollectTool)
 -(id)init
 {
     if (self = [super init]) {
+        
         _collectedDeals = [NSKeyedUnarchiver unarchiveObjectWithFile:kFilePath];
     
         if (_collectedDeals == nil) {
@@ -51,7 +52,5 @@ singleton_implementation(DPCollectTool)
 {
     deal.collected = [_collectedDeals containsObject:deal];
 }
-
-
 
 @end

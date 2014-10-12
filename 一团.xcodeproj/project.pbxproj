@@ -11,7 +11,6 @@
 		64316466191FC15400DB035A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64316465191FC15400DB035A /* CoreGraphics.framework */; };
 		64316468191FC15400DB035A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64316467191FC15400DB035A /* UIKit.framework */; };
 		6431646E191FC15400DB035A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6431646C191FC15400DB035A /* InfoPlist.strings */; };
-		64316477191FC15400DB035A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64316475191FC15400DB035A /* Main.storyboard */; };
 		6431647C191FC15400DB035A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6431647B191FC15400DB035A /* Images.xcassets */; };
 		64316483191FC15400DB035A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64316482191FC15400DB035A /* XCTest.framework */; };
 		64316484191FC15400DB035A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64316463191FC15400DB035A /* Foundation.framework */; };
@@ -33,6 +32,7 @@
 		6431653B1920F04D00DB035A /* DPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6431653A1920F04D00DB035A /* DPNavigationController.m */; };
 		6431654A1920FDFB00DB035A /* DPMoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 643165491920FDFB00DB035A /* DPMoreController.m */; };
 		6431654D19210BB300DB035A /* DPCityListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6431654C19210BB300DB035A /* DPCityListController.m */; };
+		E22A320D19E58CC200E99F94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E22A320C19E58CC200E99F94 /* Main.storyboard */; };
 		E235BB0E1928584D00A3F4F6 /* DPAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = E235BB0A1928584D00A3F4F6 /* DPAPI.m */; };
 		E235BB0F1928584D00A3F4F6 /* DPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E235BB0D1928584D00A3F4F6 /* DPRequest.m */; };
 		E235BB1219285DBE00A3F4F6 /* DPDeal.m in Sources */ = {isa = PBXBuildFile; fileRef = E235BB1119285DBE00A3F4F6 /* DPDeal.m */; };
@@ -338,7 +338,6 @@
 		6431646B191FC15400DB035A /* 一团-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "一团-Info.plist"; sourceTree = "<group>"; };
 		6431646D191FC15400DB035A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		64316471191FC15400DB035A /* 一团-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "一团-Prefix.pch"; sourceTree = "<group>"; };
-		64316476191FC15400DB035A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6431647B191FC15400DB035A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		64316481191FC15400DB035A /* 一团Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "一团Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64316482191FC15400DB035A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -375,6 +374,7 @@
 		643165491920FDFB00DB035A /* DPMoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPMoreController.m; sourceTree = "<group>"; };
 		6431654B19210BB300DB035A /* DPCityListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPCityListController.h; sourceTree = "<group>"; };
 		6431654C19210BB300DB035A /* DPCityListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPCityListController.m; sourceTree = "<group>"; };
+		E22A320C19E58CC200E99F94 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E235BB091928584D00A3F4F6 /* DPAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPAPI.h; sourceTree = "<group>"; };
 		E235BB0A1928584D00A3F4F6 /* DPAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPAPI.m; sourceTree = "<group>"; };
 		E235BB0B1928584D00A3F4F6 /* DPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPConstants.h; sourceTree = "<group>"; };
@@ -608,7 +608,6 @@
 		E2C834F9192218C70009F06E /* bg_navigation_right_hl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_navigation_right_hl@2x.png"; sourceTree = "<group>"; };
 		E2C834FA192218C70009F06E /* bg_uinavigation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_uinavigation.png; sourceTree = "<group>"; };
 		E2C834FB192218C70009F06E /* bg_uinavigation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_uinavigation@2x.png"; sourceTree = "<group>"; };
-		E2C8353019225DC10009F06E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		E2C8353119225DC10009F06E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		E2C8353219225DC10009F06E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		E2C83534192261020009F06E /* CitySection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitySection.h; sourceTree = "<group>"; };
@@ -809,7 +808,6 @@
 			isa = PBXGroup;
 			children = (
 				64316507191FC94200DB035A /* classes */,
-				64316475191FC15400DB035A /* Main.storyboard */,
 				6431647B191FC15400DB035A /* Images.xcassets */,
 				6431646A191FC15400DB035A /* Supporting Files */,
 			);
@@ -924,6 +922,7 @@
 				6431650C191FC94200DB035A /* DPAppDelegate.h */,
 				6431650D191FC94200DB035A /* DPAppDelegate.m */,
 				6431650E191FC94200DB035A /* main.m */,
+				E22A320C19E58CC200E99F94 /* Main.storyboard */,
 			);
 			path = other;
 			sourceTree = "<group>";
@@ -1758,6 +1757,7 @@
 				E2C83510192218C70009F06E /* ic_deal_hl.png in Resources */,
 				E2EB813E1930508000133BC2 /* ic_category_99.png in Resources */,
 				E2C8351F192218C70009F06E /* ic_more.png in Resources */,
+				E22A320D19E58CC200E99F94 /* Main.storyboard in Resources */,
 				E24979DF19244498005D964E /* ic_yes.png in Resources */,
 				E24979DA19244498005D964E /* ic_people@2x.png in Resources */,
 				E2C8351C192218C70009F06E /* ic_mine@2x.png in Resources */,
@@ -1889,7 +1889,6 @@
 				E24979BB19244498005D964E /* btn_dealweb@2x.png in Resources */,
 				E24979D819244498005D964E /* ic_no@2x.png in Resources */,
 				E249799A19244498005D964E /* ic_filter_category_2.png in Resources */,
-				64316477191FC15400DB035A /* Main.storyboard in Resources */,
 				E2C8350B192218C70009F06E /* ic_collect@2x.png in Resources */,
 				E24979A419244498005D964E /* ic_filter_category_5.png in Resources */,
 				E24979B319244498005D964E /* btn_dealcomment@2x.png in Resources */,
@@ -2036,15 +2035,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		64316475191FC15400DB035A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				64316476191FC15400DB035A /* Base */,
-				E2C8353019225DC10009F06E /* zh-Hans */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6431648B191FC15400DB035A /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -2142,6 +2132,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "一团/一团-Prefix.pch";
 				INFOPLIST_FILE = "一团/一团-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/dp/Desktop/Reveal.app/Contents/SharedSupport/iOS-Libraries",
@@ -2170,6 +2161,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "一团/一团-Prefix.pch";
 				INFOPLIST_FILE = "一团/一团-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/dp/Desktop/Reveal.app/Contents/SharedSupport/iOS-Libraries",

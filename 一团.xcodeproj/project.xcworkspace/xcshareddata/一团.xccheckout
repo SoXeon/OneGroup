@@ -5,29 +5,41 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>72D45A9D-4DCF-421E-AC10-6E45A5E00D2F</string>
+	<string>05F5C986-0123-4B23-9030-747E230EBCCC</string>
 	<key>IDESourceControlProjectName</key>
 	<string>一团</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>1DE72BBD-5C1A-4D53-BA52-F7835FA3254F</key>
 		<string>https://github.com/SoXeon/--.git</string>
+		<key>74350A2328A95DE75864BC15C55EB001255A54D0</key>
+		<string>https://github.com/SoXeon/--.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>一团.xcodeproj/project.xcworkspace</string>
+	<string>一团.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>1DE72BBD-5C1A-4D53-BA52-F7835FA3254F</key>
+		<string>../../../一团</string>
+		<key>74350A2328A95DE75864BC15C55EB001255A54D0</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/SoXeon/--.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>1DE72BBD-5C1A-4D53-BA52-F7835FA3254F</string>
+	<string>74350A2328A95DE75864BC15C55EB001255A54D0</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>74350A2328A95DE75864BC15C55EB001255A54D0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>%E4%B8%80%E5%9B%A2</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

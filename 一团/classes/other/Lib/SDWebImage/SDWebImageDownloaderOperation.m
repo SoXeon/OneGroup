@@ -11,6 +11,8 @@
 #import "UIImage+MultiFormat.h"
 #import <ImageIO/ImageIO.h>
 
+
+
 @interface SDWebImageDownloaderOperation ()
 
 @property (copy, nonatomic) SDWebImageDownloaderProgressBlock progressBlock;
@@ -26,11 +28,18 @@
 
 @end
 
+
+
 @implementation SDWebImageDownloaderOperation
 {
     size_t width, height;
     BOOL responseFromCached;
+    
+    
 }
+
+@synthesize executing = _executing;
+@synthesize finished = _finished;
 
 - (id)initWithRequest:(NSURLRequest *)request options:(SDWebImageDownloaderOptions)options progress:(void (^)(NSUInteger, long long))progressBlock completed:(void (^)(UIImage *, NSData *, NSError *, BOOL))completedBlock cancelled:(void (^)())cancelBlock
 {
@@ -47,6 +56,7 @@
         _completedBlock = [completedBlock copy];
         _cancelBlock = [cancelBlock copy];
         _dealedBlock = [dealedBlock copy];
+        
         _executing = NO;
         _finished = NO;
         _expectedSize = 0;

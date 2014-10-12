@@ -16,6 +16,7 @@
 #import "DPMineViewController.h"
 
 
+
 @interface DPMainController () <DPDockDelegate>
 {
     UIView *_contentView;
